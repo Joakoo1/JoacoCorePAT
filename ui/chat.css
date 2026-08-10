@@ -535,3 +535,62 @@ a[class*="originalLink_af017a"] {
 /* =========================================================
    END — JOACO//CORE
    ========================================================= */
+
+/* =========================================================
+   EMERGENCY LAYOUT RESET
+   ========================================================= */
+
+/* La fila del mensaje NO es una burbuja */
+li.messageListItem__5126c {
+    width: auto !important;
+    max-width: none !important;
+
+    display: list-item !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+
+/* El mensaje real conserva el layout de Discord */
+div.message__5126c {
+    width: auto !important;
+    max-width: none !important;
+
+    display: block !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+
+/* El contenido vuelve a su posición normal */
+div.message__5126c > div.contents_c19a55 {
+    width: auto !important;
+    max-width: none !important;
+
+    background: transparent !important;
+
+    border: none !important;
+    box-shadow: none !important;
+}
+
+
+/* Los accesorios (IMÁGENES) vuelven a su layout original */
+div.message__5126c > div.container_b7e1cb {
+    width: auto !important;
+    max-width: none !important;
+
+    background: transparent !important;
+
+    border: none !important;
+    box-shadow: none !important;
+}

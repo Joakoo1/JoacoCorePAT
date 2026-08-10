@@ -220,26 +220,10 @@
         filter: brightness(1.25);
     }
 }
-/* =========================================================
-   JOACO//CORE — WALLPAPER
-   ========================================================= */
+/* TEST WALLPAPER */
 
 #app-mount .scroller__36d07.customTheme_d125d2 {
     background-image: url("https://i.pinimg.com/736x/57/84/cd/5784cd2ebafc0b681f142b2fee7df431.jpg") !important;
-
-    background-size: 100% auto !important;
-    background-repeat: no-repeat !important;
-    background-position: center top !important;
-
-    /* La imagen se desplaza con el contenido */
-    background-attachment: scroll !important;
-}
-
-
-/* Hacer transparente el contenido */
-
-#app-mount .scrollerContent__36d07.content_d125d2 {
-    background: transparent !important;
 }
 
 #app-mount [class*="chatContent"] {

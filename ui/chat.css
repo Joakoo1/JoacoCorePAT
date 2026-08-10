@@ -238,22 +238,21 @@
    JOACO//CORE — WALLPAPER
    ========================================================= */
 
-#app-mount .chatContent__5dca8,
-#app-mount [class*="chatContent"] {
-    background: transparent !important;
-}
-
-#app-mount .messagesWrapper__36d07,
-#app-mount [class*="messagesWrapper"] {
-    background: transparent !important;
-}
-
-#app-mount .scroller__36d07,
-#app-mount [class*="scroller"] {
+#app-mount .scroller__36d07.customTheme_d125d2 {
     background-image: url("https://i.pinimg.com/736x/ba/6c/bd/ba6cbd60045586c8f01d581ba2d902b8.jpg") !important;
 
     background-size: cover !important;
     background-repeat: no-repeat !important;
     background-position: center 30% !important;
     background-attachment: fixed !important;
+}
+
+/* Dejar transparente el contenido para que se vea el wallpaper */
+
+#app-mount .scrollerContent__36d07.content_d125d2 {
+    background: transparent !important;
+}
+
+#app-mount [class*="chatContent"] {
+    background: transparent !important;
 }

@@ -1,5 +1,148 @@
-/* JOACOCORE SIDEBAR TEST */
+/* =========================================================
+   JOACO//CORE — SIDEBAR
+   ========================================================= */
 
-body {
-    background: red !important;
+/* ---------------------------------------------------------
+   CHANNEL SIDEBAR
+   --------------------------------------------------------- */
+
+[class*="sidebar"] {
+    background: rgba(5, 12, 22, 0.96) !important;
+    border-right: 1px solid var(--jc-border) !important;
+    box-shadow: 4px 0 20px rgba(0, 80, 160, 0.10) !important;
+}
+
+
+/* ---------------------------------------------------------
+   SIDEBAR HEADER
+   --------------------------------------------------------- */
+
+[class*="sidebar"] [class*="header"] {
+    background: rgba(5, 14, 25, 0.85) !important;
+    border-bottom: 1px solid var(--jc-border) !important;
+}
+
+
+/* ---------------------------------------------------------
+   CHANNEL HOVER
+   --------------------------------------------------------- */
+
+[class*="sidebar"] [class*="link"] {
+    border-radius: 7px !important;
+    transition:
+        background 0.15s ease,
+        transform 0.15s ease,
+        box-shadow 0.15s ease !important;
+}
+
+[class*="sidebar"] [class*="link"]:hover {
+    background: rgba(0, 168, 255, 0.08) !important;
+
+    box-shadow:
+        inset 2px 0 0 rgba(0, 200, 255, 0.35),
+        0 0 10px rgba(0, 120, 232, 0.08) !important;
+
+    transform: translateX(2px);
+}
+
+
+/* ---------------------------------------------------------
+   SELECTED CHANNEL
+   --------------------------------------------------------- */
+
+[class*="sidebar"] [class*="modeSelected"] {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 168, 255, 0.16),
+            rgba(0, 120, 232, 0.04)
+        ) !important;
+
+    border-radius: 7px !important;
+
+    box-shadow:
+        inset 3px 0 0 var(--jc-cyan),
+        0 0 12px rgba(0, 168, 255, 0.08) !important;
+}
+
+
+/* ---------------------------------------------------------
+   CHANNEL ICONS
+   --------------------------------------------------------- */
+
+[class*="sidebar"] svg {
+    transition:
+        color 0.15s ease,
+        filter 0.15s ease !important;
+}
+
+[class*="sidebar"] [class*="link"]:hover svg {
+    filter:
+        drop-shadow(
+            0 0 4px var(--jc-glow)
+        );
+}
+
+
+/* ---------------------------------------------------------
+   SELECTED CHANNEL TEXT
+   --------------------------------------------------------- */
+
+[class*="sidebar"] [class*="modeSelected"] [class*="name"] {
+    color: var(--jc-text) !important;
+
+    text-shadow:
+        0 0 7px rgba(0, 168, 255, 0.20);
+}
+
+
+/* ---------------------------------------------------------
+   CATEGORY HEADERS
+   --------------------------------------------------------- */
+
+[class*="sidebar"] [class*="containerDefault"] {
+    transition:
+        background 0.15s ease;
+}
+
+[class*="sidebar"] [class*="containerDefault"]:hover {
+    background:
+        rgba(0, 168, 255, 0.035);
+}
+
+
+/* ---------------------------------------------------------
+   VOICE USERS
+   --------------------------------------------------------- */
+
+[class*="sidebar"] [class*="voiceUser"] {
+    border-radius: 7px !important;
+    transition:
+        background 0.15s ease !important;
+}
+
+[class*="sidebar"] [class*="voiceUser"]:hover {
+    background:
+        rgba(0, 168, 255, 0.07) !important;
+}
+
+
+/* ---------------------------------------------------------
+   SCROLLBAR
+   --------------------------------------------------------- */
+
+[class*="sidebar"] ::-webkit-scrollbar {
+    width: 5px !important;
+}
+
+[class*="sidebar"] ::-webkit-scrollbar-thumb {
+    background:
+        rgba(0, 168, 255, 0.20) !important;
+
+    border-radius: 10px !important;
+}
+
+[class*="sidebar"] ::-webkit-scrollbar-thumb:hover {
+    background:
+        rgba(0, 200, 255, 0.45) !important;
 }

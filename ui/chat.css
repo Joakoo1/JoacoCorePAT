@@ -1,102 +1,115 @@
 /* =========================================================
    JOACO//CORE
    DISCORD CHAT THEME
-   v2.0
+   v2.1
    ========================================================= */
 
 
 /* =========================================================
-   01 — CHAT BACKGROUND
+   01 — CHAT WALLPAPER
    ========================================================= */
 
 /*
-   Wallpaper principal.
-   La capa oscura permite que el texto siga siendo legible
-   sin destruir la imagen.
+   Contenedor real encontrado en Discord:
+   .scroller__36d07.customTheme_d125d2
+
+   Wallpaper:
+   https://i.pinimg.com/736x/ba/6c/bd/
+   ba6cbd60045586c8f01d581ba2d902b8.jpg
 */
 
-[class*="chatContent"],
-[class*="chat"] {
-    background-color: #080b10 !important;
-
-    background-image:
+.scroller__36d07.customTheme_d125d2 {
+    background:
         linear-gradient(
-            rgba(5, 8, 14, 0.38),
-            rgba(5, 8, 14, 0.38)
+            rgba(5, 8, 14, 0.18),
+            rgba(5, 8, 14, 0.18)
         ),
-        url("https://i.pinimg.com/736x/ba/6c/bd/ba6cbd60045586c8f01d581ba2d902b8.jpg") !important;
-
-    background-position:
-        center center !important;
-
-    background-size:
-        cover !important;
-
-    background-repeat:
+        url("https://i.pinimg.com/736x/ba/6c/bd/ba6cbd60045586c8f01d581ba2d902b8.jpg")
+        center center / cover
         no-repeat !important;
 
     background-attachment:
-        fixed !important;
+        scroll !important;
+}
+
+
+/*
+   El contenido del scroller no debe tapar el wallpaper.
+*/
+
+.scrollerContent__36d07.content_d125d2 {
+    background:
+        transparent !important;
+}
+
+
+/* Evitar fondos heredados del contenedor del chat */
+
+[class*="chatContent"] {
+    background:
+        transparent !important;
 }
 
 
 /* =========================================================
-   CHAT WALLPAPER — REAL SCROLLER
-   ========================================================= */
-
-[class*="chatContent"] [class*="scroller"] {
-    background-color: #080b10 !important;
-
-    background-image:
-        linear-gradient(
-            rgba(5, 8, 14, 0.25),
-            rgba(5, 8, 14, 0.25)
-        ),
-        url("https://i.pinimg.com/736x/ba/6c/bd/ba6cbd60045586c8f01d581ba2d902b8.jpg") !important;
-
-    background-position: center center !important;
-
-    background-size: cover !important;
-
-    background-repeat: no-repeat !important;
-
-    background-attachment: fixed !important;
-}
-
-
-/* =========================================================
-   02 — MESSAGE BUBBLES
+   02 — MESSAGE CONTAINER
    ========================================================= */
 
 /*
-   Este fue EL selector que comprobamos que funciona.
-   NO cambiarlo por nth-child.
+   La BURBUJA ahora está en el mensaje completo.
+
+   Esto permite que:
+   - texto
+   - mensajes largos
+   - imágenes
+   - GIFs
+   - attachments
+
+   formen parte del mismo bloque visual.
 */
 
-[class*="chat"] [class*="message"] [class*="contents"] {
+[class*="chat"] [class*="message"] {
+    position:
+        relative !important;
+
+    display:
+        block !important;
+
+    width:
+        fit-content !important;
+
+    max-width:
+        calc(100% - 55px) !important;
+
+    min-width:
+        80px !important;
+
     background:
         linear-gradient(
             135deg,
-            rgba(20, 55, 95, 0.88),
-            rgba(8, 35, 70, 0.82)
+            rgba(20, 55, 95, 0.90),
+            rgba(8, 35, 70, 0.86)
         ) !important;
 
     border:
         1px solid rgba(0, 220, 255, 0.78) !important;
 
     border-radius:
-        18px !important;
+        20px !important;
 
     padding:
-        7px 13px !important;
+        10px 14px 12px 14px !important;
 
-    margin-left:
-        2px !important;
+    margin-top:
+        8px !important;
+
+    margin-bottom:
+        12px !important;
 
     box-shadow:
         0 0 8px rgba(0, 210, 255, 0.22),
         0 0 18px rgba(0, 140, 255, 0.10),
-        inset 0 0 14px rgba(0, 210, 255, 0.08) !important;
+        inset 0 0 14px rgba(0, 210, 255, 0.07) !important;
 
     transition:
         background 0.15s ease,
@@ -106,15 +119,15 @@
 
 
 /* =========================================================
-   03 — MESSAGE BUBBLE HOVER
+   03 — MESSAGE HOVER
    ========================================================= */
 
-[class*="chat"] [class*="message"] [class*="contents"]:hover {
+[class*="chat"] [class*="message"]:hover {
     background:
         linear-gradient(
             135deg,
-            rgba(25, 70, 120, 0.92),
-            rgba(8, 45, 85, 0.88)
+            rgba(25, 70, 120, 0.94),
+            rgba(8, 45, 85, 0.90)
         ) !important;
 
     border-color:
@@ -128,11 +141,44 @@
 
 
 /* =========================================================
-   04 — AVATAR STICKER
+   04 — CONTENTS TRANSPARENT
    ========================================================= */
 
 /*
-   El avatar sobresale ligeramente de la esquina
+   Como la burbuja está ahora en .message,
+   contents NO debe crear una segunda burbuja.
+*/
+
+[class*="chat"] [class*="message"] [class*="contents"] {
+    background:
+        transparent !important;
+
+    border:
+        none !important;
+
+    box-shadow:
+        none !important;
+
+    padding:
+        0 !important;
+
+    margin:
+        0 !important;
+
+    width:
+        auto !important;
+
+    max-width:
+        none !important;
+}
+
+
+/* =========================================================
+   05 — AVATAR STICKER
+   ========================================================= */
+
+/*
+   Avatar ligeramente fuera de la esquina
    superior izquierda de la burbuja.
 */
 
@@ -141,7 +187,7 @@
         relative !important;
 
     z-index:
-        10 !important;
+        20 !important;
 
     transform:
         translate(-10px, -10px) !important;
@@ -162,26 +208,125 @@
 
 
 /* =========================================================
-   05 — REPLY PREVIEW
+   06 — TEXT / MARKUP
+   ========================================================= */
+
+[class*="chat"] [class*="message"] [class*="markup"] {
+    background:
+        transparent !important;
+
+    border:
+        none !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+/*
+   Evita cajas horizontales adicionales alrededor
+   de texto largo.
+*/
+
+[class*="chat"] [class*="message"] [class*="markup"]::before,
+[class*="chat"] [class*="message"] [class*="markup"]::after {
+    box-shadow:
+        none !important;
+}
+
+
+/* =========================================================
+   07 — IMAGES / GIFS / ATTACHMENTS
    ========================================================= */
 
 /*
-   El bloque "respondido a..." permanece visible,
-   pero no se convierte en otra burbuja.
+   Los attachments quedan dentro de la burbuja principal.
 */
+
+[class*="chat"] [class*="message"]
+[class*="clickableWrapper_af017a"] {
+    margin-top:
+        8px !important;
+
+    max-width:
+        100% !important;
+
+    border-radius:
+        15px !important;
+
+    overflow:
+        hidden !important;
+
+    background:
+        rgba(8, 35, 70, 0.35) !important;
+
+    border:
+        none !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+/*
+   Imagen/GIF.
+*/
+
+[class*="chat"] [class*="message"]
+[class*="imageWrapper_af017a"] {
+    max-width:
+        100% !important;
+
+    border-radius:
+        14px !important;
+
+    overflow:
+        hidden !important;
+
+    background:
+        transparent !important;
+
+    border:
+        none !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+/*
+   La imagen no debe sobresalir de la burbuja.
+*/
+
+[class*="chat"] [class*="message"]
+[class*="imageWrapper_af017a"] img {
+    max-width:
+        100% !important;
+
+    border-radius:
+        13px !important;
+}
+
+
+/* =========================================================
+   08 — REPLY PREVIEW
+   ========================================================= */
 
 [class*="chat"] [class*="message"] [class*="replied"] {
     position:
         relative !important;
 
     z-index:
-        5 !important;
+        6 !important;
 
     display:
         block !important;
 
     min-height:
         24px !important;
+
+    max-width:
+        100% !important;
 
     overflow:
         visible !important;
@@ -193,19 +338,21 @@
         visible !important;
 
     margin-bottom:
-        5px !important;
+        6px !important;
 }
 
 
 /*
-   Preview del mensaje respondido.
+   Texto del mensaje respondido.
 
    Una sola línea.
-   Si es demasiado largo aparece "...".
+   Texto largo → ...
 */
 
-[class*="chat"] [class*="message"] [class*="replied"] [class*="contents"],
-[class*="chat"] [class*="message"] [class*="replied"] [class*="markup"] {
+[class*="chat"] [class*="message"] [class*="replied"]
+[class*="contents"],
+[class*="chat"] [class*="message"] [class*="replied"]
+[class*="markup"] {
     display:
         block !important;
 
@@ -213,7 +360,7 @@
         auto !important;
 
     max-width:
-        480px !important;
+        min(480px, 100%) !important;
 
     white-space:
         nowrap !important;
@@ -248,41 +395,42 @@
 
 
 /* =========================================================
-   06 — REPLY CONNECTOR
+   09 — REPLY CONNECTOR
    ========================================================= */
 
 /*
-   IMPORTANTE:
-   Solo el "replied" EXTERNO dibuja el conector.
-
-   Esto evita que Discord genere dos L superpuestas.
+   SOLO el replied EXTERNO crea el conector.
+   Los replied internos NO crean otro.
 */
 
-[class*="chat"] [class*="message"] [class*="replied"]:not(
+[class*="chat"] [class*="message"]
+[class*="replied"]:not(
     [class*="replied"] [class*="replied"]
 ) {
     position:
         relative !important;
 
     z-index:
-        6 !important;
+        7 !important;
 }
 
 
 /*
-   Conector único.
-
-        ┌────────
+        ┌────────────
         │
         │
-        └────────
+        └───────────────╮
+                        │
+                     MESSAGE
 
-   Conecta el reply con la esquina de la burbuja.
+   Conector cyan.
 */
 
-[class*="chat"] [class*="message"] [class*="replied"]:not(
+[class*="chat"] [class*="message"]
+[class*="replied"]:not(
     [class*="replied"] [class*="replied"]
 )::after {
+
     content:
         "" !important;
 
@@ -330,12 +478,13 @@
 
 
 /*
-   Impide que los replied internos creen
-   otro conector.
+   Mata cualquier conector generado por
+   replied internos.
 */
 
-[class*="chat"] [class*="message"] [class*="replied"]
-[class*="replied"]::after {
+[class*="chat"] [class*="message"]
+[class*="replied"] [class*="replied"]::after {
+
     content:
         none !important;
 
@@ -345,14 +494,12 @@
 
 
 /* =========================================================
-   07 — REPLY CONTENT SAFETY
+   10 — REPLY VISIBILITY
    ========================================================= */
 
-/*
-   Asegura que el texto del reply siga siendo visible.
-*/
+[class*="chat"] [class*="message"]
+[class*="replied"] * {
 
-[class*="chat"] [class*="message"] [class*="replied"] * {
     opacity:
         1 !important;
 
@@ -361,85 +508,95 @@
 }
 
 
-/* =========================================================
-   08 — CLEANUP
-   ========================================================= */
-
 /*
-   Evita que pseudo-elementos antiguos de pruebas
-   creen conectores adicionales.
+   Evita pseudo-elementos antiguos.
 */
 
-[class*="chat"] [class*="message"] [class*="replied"]::before {
+[class*="chat"] [class*="message"]
+[class*="replied"]::before {
+
     content:
         none !important;
 }
 
 
-
-
 /* =========================================================
-   REAL CHAT WALLPAPER
+   11 — REMOVE OLD MESSAGE LINES
    ========================================================= */
 
-.scroller__36d07.customTheme_d125d2 {
-    background:
-        linear-gradient(
-            rgba(5, 8, 14, 0.18),
-            rgba(5, 8, 14, 0.18)
-        ),
-        url("https://i.pinimg.com/736x/ba/6c/bd/ba6cbd60045586c8f01d581ba2d902b8.jpg")
-        center center / cover
-        no-repeat fixed !important;
-}
+/*
+   Elimina fondos/bordes nativos del message,
+   pero SOLO si están en elementos internos.
+*/
 
+[class*="chat"] [class*="message"]
+> [class*="background"] {
 
-/* El contenido interno debe ser transparente */
-
-.scrollerContent__36d07.content_d125d2 {
     background:
         transparent !important;
+
+    border:
+        none !important;
+
+    box-shadow:
+        none !important;
 }
 
 
 /* =========================================================
-   MESSAGE CONTAINER — CLEANUP
+   12 — ATTACHMENT SAFETY
+   ========================================================= */
+
+[class*="chat"] [class*="message"]
+a[class*="originalLink_af017a"] {
+
+    display:
+        block !important;
+
+    max-width:
+        100% !important;
+
+    border-radius:
+        14px !important;
+
+    overflow:
+        hidden !important;
+}
+
+
+/* =========================================================
+   13 — LONG MESSAGE SAFETY
    ========================================================= */
 
 [class*="chat"] [class*="message"] {
-    background: transparent !important;
-    border: none !important;
-    box-shadow: none !important;
+    overflow:
+        visible !important;
+
+    overflow-wrap:
+        anywhere !important;
 }
 
 
-/* Evitar la línea pesada entre mensajes */
-
-[class*="chat"] [class*="message"]::before,
-[class*="chat"] [class*="message"]::after {
-    box-shadow: none !important;
+[class*="chat"] [class*="message"] [class*="contents"] {
+    overflow-wrap:
+        anywhere !important;
 }
+
 
 /* =========================================================
-   ATTACHMENTS — INTEGRAR CON LA BURBUJA
+   14 — DO NOT TOUCH CHAT INPUT BUTTONS
    ========================================================= */
 
-div[class*="clickableWrapper_af017a"] {
-    border-radius: 18px !important;
-    overflow: hidden !important;
+/*
+   IMPORTANTE:
+   No estilizamos [class*="button"] aquí.
 
-    border:
-        1px solid rgba(0, 220, 255, 0.78) !important;
+   Discord mantiene los botones originales de la barra
+   de escritura para evitar que se vuelvan transparentes
+   o que todos reciban el mismo borde.
+*/
 
-    box-shadow:
-        0 0 8px rgba(0, 210, 255, 0.22),
-        inset 0 0 14px rgba(0, 210, 255, 0.08) !important;
 
-    background:
-        rgba(8, 35, 70, 0.82) !important;
-}
-
-div[class*="imageWrapper_af017a"] {
-    border-radius: 15px !important;
-    overflow: hidden !important;
-}
+/* =========================================================
+   END — JOACO//CORE
+   ========================================================= */

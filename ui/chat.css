@@ -1,3 +1,96 @@
+
+/*
+ * =========================================================
+ * JOACO//CORE
+ * Custom Vencord Theme
+ * =========================================================
+ *
+ * Author: Joaco
+ * Version: 1.0
+ *
+ * Credits:
+ * RadialStatus
+ * https://github.com/DiscordStyles/RadialStatus
+ *
+ * =========================================================
+ */
+
+@import url("https://raw.githubusercontent.com/DiscordStyles/RadialStatus/refs/heads/deploy/RadialStatus.css");
+
+
+:root {
+
+    /* Tus colores */
+    --jc-bg: #050A12;
+    --jc-bg-2: #08111D;
+    --jc-bg-3: #0B1725;
+
+    --jc-panel: #0B1B2B;
+    --jc-panel-2: #0E2235;
+
+    --jc-blue: #0878E8;
+    --jc-blue-bright: #00A8FF;
+    --jc-blue-dark: #064A91;
+
+    --jc-cyan: #73D7FF;
+
+    --jc-text: #D9F3FF;
+    --jc-text-muted: #7896AA;
+
+    --jc-border: rgba(8, 120, 232, .35);
+
+    --jc-glow:
+        0 0 8px rgba(8, 120, 232, .45);
+
+    --jc-glow-strong:
+        0 0 12px rgba(0, 168, 255, .55);
+
+
+    /* RadialStatus */
+
+    --rs-small-spacing: 2px;
+    --rs-medium-spacing: 3px;
+    --rs-large-spacing: 4px;
+
+    --rs-small-width: 2px;
+    --rs-medium-width: 2px;
+    --rs-large-width: 3px;
+
+    --rs-avatar-shape: 50%;
+
+    --rs-online-color: #00eaff;
+    --rs-idle-color: #ffd84a;
+    --rs-dnd-color: #ff4268;
+    --rs-streaming-color: #b46cff;
+    --rs-offline-color: #667085;
+    --rs-invisible-color: #667085;
+
+    --rs-phone-color: #00eaff;
+    --rs-phone-visible: none;
+}
+
+
+/* =========================================================
+   DESDE AQUÍ ↓
+   TODO TU CSS ACTUAL
+   ========================================================= */
+
+
+/* Tus burbujas */
+...
+
+/* Tu wallpaper */
+...
+
+/* Tus replies */
+...
+
+/* Tus efectos */
+...
+
+/* etc. */
+
+
 /* =========================================================
    JOACO//CORE
    DISCORD CHAT WALLPAPER

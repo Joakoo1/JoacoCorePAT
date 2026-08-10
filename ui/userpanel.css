@@ -1,1 +1,33 @@
+/* =========================================================
+   JOACO//CORE — USER PANEL
+   ========================================================= */
 
+
+/* USER PANEL */
+
+[class*="panels"] [aria-label] {
+    border-radius: 7px !important;
+
+    transition:
+        background 0.15s ease,
+        color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.15s ease !important;
+}
+
+
+/* CONTROL HOVER */
+
+[class*="panels"] [aria-label]:hover {
+    background:
+        rgba(0, 168, 255, 0.12) !important;
+
+    color:
+        var(--jc-cyan) !important;
+
+    box-shadow:
+        0 0 9px rgba(0, 168, 255, 0.18) !important;
+
+    transform:
+        scale(1.06);
+}

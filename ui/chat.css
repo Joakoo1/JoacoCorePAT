@@ -36,4 +36,31 @@
     background:
         transparent !important;
 }
+/* =========================================================
+   REPLY PREVIEW — PREVENT TEXT CLIPPING
+   ========================================================= */
 
+[class*="repliedMessage"] {
+    height: auto !important;
+    max-height: none !important;
+
+    min-height: 20px !important;
+
+    overflow: visible !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+
+/* Texto del preview */
+
+[class*="repliedMessage"] [class*="markup"] {
+    height: auto !important;
+    max-height: none !important;
+
+    overflow: visible !important;
+
+    opacity: 1 !important;
+    visibility: visible !important;
+}

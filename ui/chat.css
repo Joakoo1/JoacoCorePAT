@@ -1,7 +1,3 @@
-body {
-    filter: none !important;
-}
-
-[class*="chat"] {
-    outline: 5px solid red !important;
-}
+/* =========================================================
+   JOACO//CORE — CHAT
+   ========================================================= */

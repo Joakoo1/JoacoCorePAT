@@ -10,11 +10,13 @@
 [class*="chat"] {
     background:
         linear-gradient(
-            rgba(13, 13, 15, 0.72),
-            rgba(13, 13, 15, 0.72)
+            rgba(13, 13, 15, 0.68),
+            rgba(13, 13, 15, 0.68)
         ),
         url("https://i.pinimg.com/736x/ba/6c/bd/ba6cbd60045586c8f01d581ba2d902b8.jpg")
-        center / cover no-repeat fixed !important;
+        center / contain no-repeat fixed !important;
+
+    background-color: #0d0d0f !important;
 }
 
 

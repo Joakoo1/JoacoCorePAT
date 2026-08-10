@@ -361,3 +361,7 @@
     content:
         none !important;
 }
+/* WALLPAPER TEST */
+[class*="chatContent"] {
+    background: red !important;
+}

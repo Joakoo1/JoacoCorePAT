@@ -179,17 +179,6 @@ body {
 }
 
 
-/* Username */
-
-[class*="username"] {
-    color:
-        var(--jc-cyan) !important;
-
-    text-shadow:
-        0 0 5px rgba(0, 168, 255, .30);
-}
-
-
 /* Timestamp */
 
 [class*="timestamp"] {
@@ -963,3 +952,4 @@ textarea:focus {
         0 0 5px #0878E8,
         0 0 12px rgba(0,168,255,.7);
 }
+

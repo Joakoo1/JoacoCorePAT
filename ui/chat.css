@@ -68,19 +68,6 @@
     --rs-phone-color: #00eaff;
     --rs-phone-visible: none;
 }
-/* =========================================================
-   JOACO//CORE — WALLPAPER
-   ========================================================= */
-
-#app-mount .scroller__36d07.customTheme_d125d2 {
-    background-image: url("https://i.pinimg.com/736x/ba/6c/bd/ba6cbd60045586c8f01d581ba2d902b8.jpg") !important;
-
-    background-size: cover !important;
-    background-repeat: no-repeat !important;
-    background-position: center 30% !important;
-
-    background-attachment: fixed !important;
-}
 
 
 /* =========================================================

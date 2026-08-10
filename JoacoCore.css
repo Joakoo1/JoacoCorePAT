@@ -522,15 +522,6 @@ textarea:focus {
         0 0 12px rgba(0,120,255,.08);
 }
 
-[class*="username"] {
-    color: #73D7FF !important;
-
-    font-weight: 650;
-
-    text-shadow:
-        0 0 6px rgba(0,168,255,.35);
-}
-
 
 [class*="guilds"] {
     padding-top: 8px !important;

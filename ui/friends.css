@@ -2,4 +2,11 @@
    JOACO//CORE — FRIENDS
    ========================================================= */
 
-/* Friends module — first pass */
+[class*="people"] {
+    background: rgba(5, 12, 22, 0.92) !important;
+
+    border-left: 1px solid var(--jc-border) !important;
+
+    box-shadow:
+        inset 4px 0 20px rgba(0, 100, 200, 0.05) !important;
+}

@@ -37,30 +37,24 @@
         transparent !important;
 }
 /* =========================================================
-   REPLY PREVIEW — PREVENT TEXT CLIPPING
+   REPLY PREVIEW — SHORT MESSAGE FIX
    ========================================================= */
 
 [class*="repliedMessage"] {
-    height: auto !important;
-    max-height: none !important;
+    min-width: 80px !important;
+    min-height: 18px !important;
 
-    min-height: 20px !important;
-
-    overflow: visible !important;
-
-    opacity: 1 !important;
+    display: block !important;
     visibility: visible !important;
+    opacity: 1 !important;
 }
 
+[class*="repliedMessage"] [class*="markup"],
+[class*="repliedMessage"] [class*="contents"] {
+    min-width: 40px !important;
+    min-height: 16px !important;
 
-/* Texto del preview */
-
-[class*="repliedMessage"] [class*="markup"] {
-    height: auto !important;
-    max-height: none !important;
-
-    overflow: visible !important;
-
-    opacity: 1 !important;
+    display: block !important;
     visibility: visible !important;
+    opacity: 1 !important;
 }

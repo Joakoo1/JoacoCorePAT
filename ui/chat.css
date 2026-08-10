@@ -40,17 +40,6 @@
 }
 
 
-/*
-   Evita que el contenedor de mensajes tape completamente
-   nuestro wallpaper.
-*/
-
-[class*="chatContent"] [class*="scroller"] {
-    background:
-        transparent !important;
-}
-
-
 /* =========================================================
    02 — MESSAGE BUBBLES
    ========================================================= */

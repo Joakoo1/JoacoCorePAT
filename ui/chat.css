@@ -6,6 +6,41 @@
 
 
 /* =========================================================
+   01 — CHAT BACKGROUND
+   ========================================================= */
+
+/*
+   Wallpaper principal.
+   La capa oscura permite que el texto siga siendo legible
+   sin destruir la imagen.
+*/
+
+[class*="chatContent"],
+[class*="chat"] {
+    background-color: #080b10 !important;
+
+    background-image:
+        linear-gradient(
+            rgba(5, 8, 14, 0.38),
+            rgba(5, 8, 14, 0.38)
+        ),
+        url("https://i.pinimg.com/736x/ba/6c/bd/ba6cbd60045586c8f01d581ba2d902b8.jpg") !important;
+
+    background-position:
+        center center !important;
+
+    background-size:
+        cover !important;
+
+    background-repeat:
+        no-repeat !important;
+
+    background-attachment:
+        fixed !important;
+}
+
+
+/* =========================================================
    CHAT WALLPAPER — REAL SCROLLER
    ========================================================= */
 
@@ -338,4 +373,84 @@
 [class*="chat"] [class*="message"] [class*="replied"]::before {
     content:
         none !important;
+}
+
+
+/* =========================================================
+   CHAT INPUT — ICON BUTTONS
+   ========================================================= */
+
+[class*="channelTextArea"] [class*="button"] {
+    opacity: 1 !important;
+    visibility: visible !important;
+
+    background-color:
+        rgba(20, 25, 32, 0.85) !important;
+
+    border:
+        1px solid rgba(0, 220, 255, 0.30) !important;
+
+    border-radius:
+        8px !important;
+
+    box-shadow:
+        0 0 6px rgba(0, 220, 255, 0.08) !important;
+}
+
+[class*="channelTextArea"] [class*="button"]:hover {
+    background-color:
+        rgba(0, 55, 75, 0.90) !important;
+
+    border-color:
+        rgba(0, 220, 255, 0.75) !important;
+
+    box-shadow:
+        0 0 8px rgba(0, 220, 255, 0.25) !important;
+}
+
+[class*="channelTextArea"] [class*="button"] svg {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* =========================================================
+   REAL CHAT WALLPAPER
+   ========================================================= */
+
+.scroller__36d07.customTheme_d125d2 {
+    background:
+        linear-gradient(
+            rgba(5, 8, 14, 0.18),
+            rgba(5, 8, 14, 0.18)
+        ),
+        url("https://i.pinimg.com/736x/ba/6c/bd/ba6cbd60045586c8f01d581ba2d902b8.jpg")
+        center center / cover
+        no-repeat fixed !important;
+}
+
+
+/* El contenido interno debe ser transparente */
+
+.scrollerContent__36d07.content_d125d2 {
+    background:
+        transparent !important;
+}
+
+
+/* =========================================================
+   MESSAGE CONTAINER — CLEANUP
+   ========================================================= */
+
+[class*="chat"] [class*="message"] {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+
+/* Evitar la línea pesada entre mensajes */
+
+[class*="chat"] [class*="message"]::before,
+[class*="chat"] [class*="message"]::after {
+    box-shadow: none !important;
 }

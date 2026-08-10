@@ -376,42 +376,7 @@
 }
 
 
-/* =========================================================
-   CHAT INPUT — ICON BUTTONS
-   ========================================================= */
 
-[class*="channelTextArea"] [class*="button"] {
-    opacity: 1 !important;
-    visibility: visible !important;
-
-    background-color:
-        rgba(20, 25, 32, 0.85) !important;
-
-    border:
-        1px solid rgba(0, 220, 255, 0.30) !important;
-
-    border-radius:
-        8px !important;
-
-    box-shadow:
-        0 0 6px rgba(0, 220, 255, 0.08) !important;
-}
-
-[class*="channelTextArea"] [class*="button"]:hover {
-    background-color:
-        rgba(0, 55, 75, 0.90) !important;
-
-    border-color:
-        rgba(0, 220, 255, 0.75) !important;
-
-    box-shadow:
-        0 0 8px rgba(0, 220, 255, 0.25) !important;
-}
-
-[class*="channelTextArea"] [class*="button"] svg {
-    opacity: 1 !important;
-    visibility: visible !important;
-}
 
 /* =========================================================
    REAL CHAT WALLPAPER

@@ -1,1 +1,37 @@
+/* =========================================================
+   JOACO//CORE — BASE
+   ========================================================= */
 
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    background: var(--jc-bg) !important;
+    color: var(--jc-text);
+}
+
+body {
+    overflow: hidden;
+}
+
+/* Scrollbars */
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 168, 255, 0.22);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 200, 255, 0.45);
+}

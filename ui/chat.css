@@ -361,6 +361,6 @@
     content:
         none !important;
 }
-[class*="chat"] {
+[class*="scroller"] {
     background: red !important;
 }

@@ -1,3 +1,66 @@
 /* =========================================================
    JOACO//CORE — CHAT
    ========================================================= */
+
+
+/* ---------------------------------------------------------
+   CHAT BACKGROUND
+   --------------------------------------------------------- */
+
+[class*="chat"] {
+    background: #0d0d0f !important;
+}
+
+
+/* ---------------------------------------------------------
+   MESSAGE COMPOSER
+   --------------------------------------------------------- */
+
+[class*="chat"] [class*="textArea"] {
+    border-radius: 10px !important;
+}
+
+
+/* ---------------------------------------------------------
+   COMPOSER TOOLBAR
+   GIF / EMOJI / STICKERS / ACTIVITIES
+   --------------------------------------------------------- */
+
+[class*="chat"] [class*="textArea"] ~ * > * {
+    border-radius: 7px !important;
+
+    transition:
+        background 0.15s ease,
+        color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.15s ease !important;
+}
+
+
+/* TOOLBAR HOVER */
+
+[class*="chat"] [class*="textArea"] ~ * > *:hover {
+    background: rgba(0, 168, 255, 0.12) !important;
+
+    color: var(--jc-cyan) !important;
+
+    box-shadow:
+        0 0 9px rgba(0, 168, 255, 0.18) !important;
+
+    transform: scale(1.08);
+}
+
+
+/* ---------------------------------------------------------
+   GIF / STICKER / EMOJI PICKER
+   --------------------------------------------------------- */
+
+[role="dialog"] > * {
+    border-radius: 12px !important;
+
+    border:
+        1px solid rgba(0, 168, 255, 0.25) !important;
+
+    box-shadow:
+        0 0 20px rgba(0, 168, 255, 0.12) !important;
+}

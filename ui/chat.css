@@ -220,23 +220,3 @@
         filter: brightness(1.25);
     }
 }
-/* =========================================================
-   JOACO//CORE — CHAT WALLPAPER
-   ========================================================= */
-
-#app-mount .chatContent_f75fb0 {
-    background-image: url("https://i.pinimg.com/736x/57/84/cd/5784cd2ebafc0b681f142b2fee7df431.jpg") !important;
-
-    background-size: 100% auto !important;
-    background-repeat: no-repeat !important;
-    background-position: center top !important;
-    background-attachment: scroll !important;
-}
-
-/* Contenedores internos transparentes */
-
-#app-mount .chat_f75fb0,
-#app-mount .scroller_d125d2,
-#app-mount .scrollerContent_36d07 {
-    background-color: transparent !important;
-}

@@ -52,64 +52,33 @@
 
 
 /* =========================================================
-   02 — MESSAGE CONTAINER
+   02 — MESSAGE BUBBLES
    ========================================================= */
 
-/*
-   La BURBUJA ahora está en el mensaje completo.
-
-   Esto permite que:
-   - texto
-   - mensajes largos
-   - imágenes
-   - GIFs
-   - attachments
-
-   formen parte del mismo bloque visual.
-*/
-
-[class*="chat"] [class*="message"] {
-    position:
-        relative !important;
-
-    display:
-        block !important;
-
-    width:
-        fit-content !important;
-
-    max-width:
-        calc(100% - 55px) !important;
-
-    min-width:
-        80px !important;
-
+[class*="chat"] [class*="message"] [class*="contents"] {
     background:
         linear-gradient(
             135deg,
-            rgba(20, 55, 95, 0.90),
-            rgba(8, 35, 70, 0.86)
+            rgba(20, 55, 95, 0.88),
+            rgba(8, 35, 70, 0.82)
         ) !important;
 
     border:
         1px solid rgba(0, 220, 255, 0.78) !important;
 
     border-radius:
-        20px !important;
+        18px !important;
 
     padding:
-        10px 14px 12px 14px !important;
+        7px 13px !important;
 
-    margin-top:
-        8px !important;
-
-    margin-bottom:
-        12px !important;
+    margin-left:
+        2px !important;
 
     box-shadow:
         0 0 8px rgba(0, 210, 255, 0.22),
         0 0 18px rgba(0, 140, 255, 0.10),
-        inset 0 0 14px rgba(0, 210, 255, 0.07) !important;
+        inset 0 0 14px rgba(0, 210, 255, 0.08) !important;
 
     transition:
         background 0.15s ease,
@@ -119,15 +88,15 @@
 
 
 /* =========================================================
-   03 — MESSAGE HOVER
+   03 — MESSAGE BUBBLE HOVER
    ========================================================= */
 
-[class*="chat"] [class*="message"]:hover {
+[class*="chat"] [class*="message"] [class*="contents"]:hover {
     background:
         linear-gradient(
             135deg,
-            rgba(25, 70, 120, 0.94),
-            rgba(8, 45, 85, 0.90)
+            rgba(25, 70, 120, 0.92),
+            rgba(8, 45, 85, 0.88)
         ) !important;
 
     border-color:
@@ -138,40 +107,6 @@
         0 0 22px rgba(0, 140, 255, 0.16),
         inset 0 0 16px rgba(0, 220, 255, 0.10) !important;
 }
-
-
-/* =========================================================
-   04 — CONTENTS TRANSPARENT
-   ========================================================= */
-
-/*
-   Como la burbuja está ahora en .message,
-   contents NO debe crear una segunda burbuja.
-*/
-
-[class*="chat"] [class*="message"] [class*="contents"] {
-    background:
-        transparent !important;
-
-    border:
-        none !important;
-
-    box-shadow:
-        none !important;
-
-    padding:
-        0 !important;
-
-    margin:
-        0 !important;
-
-    width:
-        auto !important;
-
-    max-width:
-        none !important;
-}
-
 
 /* =========================================================
    05 — AVATAR STICKER

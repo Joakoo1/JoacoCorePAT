@@ -1,46 +1,75 @@
 /* =========================================================
-   JOACO//CORE — DISCORD CHAT
-   MESSAGE BUBBLES + AVATAR STICKERS + BACKGROUND
+   JOACO//CORE
+   DISCORD CHAT THEME
+   v2.0
    ========================================================= */
 
 
 /* =========================================================
-   BACKGROUND
+   01 — CHAT BACKGROUND
    ========================================================= */
 
-[class*="chat"] {
-    background:
-        linear-gradient(
-            rgba(13, 13, 15, 0.58),
-            rgba(13, 13, 15, 0.58)
-        ),
-        url("https://i.pinimg.com/736x/ba/6c/bd/ba6cbd60045586c8f01d581ba2d902b8.jpg")
-        center / cover no-repeat fixed !important;
+/*
+   Wallpaper principal.
+   La capa oscura permite que el texto siga siendo legible
+   sin destruir la imagen.
+*/
 
-    background-color:
-        #0d0d0f !important;
+[class*="chatContent"],
+[class*="chat"] {
+    background-color: #080b10 !important;
+
+    background-image:
+        linear-gradient(
+            rgba(5, 8, 14, 0.38),
+            rgba(5, 8, 14, 0.38)
+        ),
+        url("https://i.pinimg.com/736x/ba/6c/bd/ba6cbd60045586c8f01d581ba2d902b8.jpg") !important;
+
+    background-position:
+        center center !important;
+
+    background-size:
+        cover !important;
+
+    background-repeat:
+        no-repeat !important;
+
+    background-attachment:
+        fixed !important;
+}
+
+
+/*
+   Evita que el contenedor de mensajes tape completamente
+   nuestro wallpaper.
+*/
+
+[class*="chatContent"] [class*="scroller"] {
+    background:
+        transparent !important;
 }
 
 
 /* =========================================================
-   MESSAGE BUBBLES
+   02 — MESSAGE BUBBLES
    ========================================================= */
 
 /*
-   [class*="contents"] fue el selector que encontramos
-   que funciona correctamente en TODOS los mensajes.
+   Este fue EL selector que comprobamos que funciona.
+   NO cambiarlo por nth-child.
 */
 
 [class*="chat"] [class*="message"] [class*="contents"] {
     background:
         linear-gradient(
             135deg,
-            rgba(20, 55, 95, 0.82),
-            rgba(8, 35, 70, 0.76)
+            rgba(20, 55, 95, 0.88),
+            rgba(8, 35, 70, 0.82)
         ) !important;
 
     border:
-        1px solid rgba(0, 220, 255, 0.75) !important;
+        1px solid rgba(0, 220, 255, 0.78) !important;
 
     border-radius:
         18px !important;
@@ -64,19 +93,19 @@
 
 
 /* =========================================================
-   MESSAGE BUBBLE — HOVER
+   03 — MESSAGE BUBBLE HOVER
    ========================================================= */
 
 [class*="chat"] [class*="message"] [class*="contents"]:hover {
     background:
         linear-gradient(
             135deg,
-            rgba(25, 70, 120, 0.88),
-            rgba(8, 45, 85, 0.82)
+            rgba(25, 70, 120, 0.92),
+            rgba(8, 45, 85, 0.88)
         ) !important;
 
     border-color:
-        rgba(0, 235, 255, 0.95) !important;
+        rgba(0, 235, 255, 0.96) !important;
 
     box-shadow:
         0 0 10px rgba(0, 220, 255, 0.32),
@@ -86,8 +115,13 @@
 
 
 /* =========================================================
-   AVATAR — STICKER STYLE
+   04 — AVATAR STICKER
    ========================================================= */
+
+/*
+   El avatar sobresale ligeramente de la esquina
+   superior izquierda de la burbuja.
+*/
 
 [class*="chat"] [class*="message"] [class*="avatar"] {
     position:
@@ -96,10 +130,6 @@
     z-index:
         10 !important;
 
-    /*
-       Un poquito arriba y hacia la izquierda,
-       sobresaliendo de la burbuja.
-    */
     transform:
         translate(-10px, -10px) !important;
 
@@ -115,4 +145,219 @@
 
     background:
         #07131c !important;
+}
+
+
+/* =========================================================
+   05 — REPLY PREVIEW
+   ========================================================= */
+
+/*
+   El bloque "respondido a..." permanece visible,
+   pero no se convierte en otra burbuja.
+*/
+
+[class*="chat"] [class*="message"] [class*="replied"] {
+    position:
+        relative !important;
+
+    z-index:
+        5 !important;
+
+    display:
+        block !important;
+
+    min-height:
+        24px !important;
+
+    overflow:
+        visible !important;
+
+    opacity:
+        1 !important;
+
+    visibility:
+        visible !important;
+
+    margin-bottom:
+        5px !important;
+}
+
+
+/*
+   Preview del mensaje respondido.
+
+   Una sola línea.
+   Si es demasiado largo aparece "...".
+*/
+
+[class*="chat"] [class*="message"] [class*="replied"] [class*="contents"],
+[class*="chat"] [class*="message"] [class*="replied"] [class*="markup"] {
+    display:
+        block !important;
+
+    width:
+        auto !important;
+
+    max-width:
+        480px !important;
+
+    white-space:
+        nowrap !important;
+
+    overflow:
+        hidden !important;
+
+    text-overflow:
+        ellipsis !important;
+
+    background:
+        transparent !important;
+
+    border:
+        none !important;
+
+    box-shadow:
+        none !important;
+
+    padding:
+        0 !important;
+
+    margin:
+        0 !important;
+
+    opacity:
+        1 !important;
+
+    visibility:
+        visible !important;
+}
+
+
+/* =========================================================
+   06 — REPLY CONNECTOR
+   ========================================================= */
+
+/*
+   IMPORTANTE:
+   Solo el "replied" EXTERNO dibuja el conector.
+
+   Esto evita que Discord genere dos L superpuestas.
+*/
+
+[class*="chat"] [class*="message"] [class*="replied"]:not(
+    [class*="replied"] [class*="replied"]
+) {
+    position:
+        relative !important;
+
+    z-index:
+        6 !important;
+}
+
+
+/*
+   Conector único.
+
+        ┌────────
+        │
+        │
+        └────────
+
+   Conecta el reply con la esquina de la burbuja.
+*/
+
+[class*="chat"] [class*="message"] [class*="replied"]:not(
+    [class*="replied"] [class*="replied"]
+)::after {
+    content:
+        "" !important;
+
+    position:
+        absolute !important;
+
+    left:
+        -42px !important;
+
+    bottom:
+        -34px !important;
+
+    width:
+        34px !important;
+
+    height:
+        42px !important;
+
+    border-left:
+        2px solid rgba(0, 220, 255, 0.85) !important;
+
+    border-top:
+        2px solid rgba(0, 220, 255, 0.85) !important;
+
+    border-bottom:
+        2px solid rgba(0, 220, 255, 0.85) !important;
+
+    border-right:
+        none !important;
+
+    border-top-left-radius:
+        10px !important;
+
+    border-bottom-left-radius:
+        10px !important;
+
+    pointer-events:
+        none !important;
+
+    filter:
+        drop-shadow(
+            0 0 4px rgba(0, 220, 255, 0.45)
+        ) !important;
+}
+
+
+/*
+   Impide que los replied internos creen
+   otro conector.
+*/
+
+[class*="chat"] [class*="message"] [class*="replied"]
+[class*="replied"]::after {
+    content:
+        none !important;
+
+    display:
+        none !important;
+}
+
+
+/* =========================================================
+   07 — REPLY CONTENT SAFETY
+   ========================================================= */
+
+/*
+   Asegura que el texto del reply siga siendo visible.
+*/
+
+[class*="chat"] [class*="message"] [class*="replied"] * {
+    opacity:
+        1 !important;
+
+    visibility:
+        visible !important;
+}
+
+
+/* =========================================================
+   08 — CLEANUP
+   ========================================================= */
+
+/*
+   Evita que pseudo-elementos antiguos de pruebas
+   creen conectores adicionales.
+*/
+
+[class*="chat"] [class*="message"] [class*="replied"]::before {
+    content:
+        none !important;
 }

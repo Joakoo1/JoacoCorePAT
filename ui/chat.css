@@ -594,3 +594,113 @@ div.message__5126c > div.container_b7e1cb {
     border: none !important;
     box-shadow: none !important;
 }
+ /* =========================================================
+   MESSAGE BUBBLE — REAL MESSAGE CONTAINER
+   ========================================================= */
+
+div.message__5126c {
+    position: relative !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(20, 55, 95, 0.90),
+            rgba(8, 35, 70, 0.86)
+        ) !important;
+
+    border:
+        1px solid rgba(0, 220, 255, 0.78) !important;
+
+    border-radius:
+        20px !important;
+
+    padding:
+        9px 14px 11px 14px !important;
+
+    margin:
+        7px 0 11px 0 !important;
+
+    box-shadow:
+        0 0 8px rgba(0, 210, 255, 0.22),
+        0 0 18px rgba(0, 140, 255, 0.10),
+        inset 0 0 14px rgba(0, 210, 255, 0.07) !important;
+
+    overflow:
+        visible !important;
+}
+
+
+/* =========================================================
+   CONTENT — NO SECOND BUBBLE
+   ========================================================= */
+
+div.message__5126c > div.contents_c19a55 {
+    background:
+        transparent !important;
+
+    border:
+        none !important;
+
+    box-shadow:
+        none !important;
+
+    padding:
+        0 !important;
+
+    margin:
+        0 !important;
+}
+
+
+/* =========================================================
+   ATTACHMENTS — INSIDE THE SAME BUBBLE
+   ========================================================= */
+
+div.message__5126c > div.container_b7e1cb {
+    background:
+        transparent !important;
+
+    border:
+        none !important;
+
+    box-shadow:
+        none !important;
+
+    margin-top:
+        7px !important;
+
+    padding:
+        0 !important;
+
+    max-width:
+        100% !important;
+}
+
+
+/* Images / GIFs */
+
+div.message__5126c [class*="imageWrapper"] {
+    border-radius:
+        15px !important;
+
+    overflow:
+        hidden !important;
+
+    max-width:
+        100% !important;
+}
+
+
+/* =========================================================
+   HOVER
+   ========================================================= */
+
+div.message__5126c:hover {
+    border-color:
+        rgba(0, 235, 255, 0.95) !important;
+
+    box-shadow:
+        0 0 10px rgba(0, 220, 255, 0.30),
+        0 0 22px rgba(0, 140, 255, 0.15),
+        inset 0 0 16px rgba(0, 220, 255, 0.09) !important;
+}

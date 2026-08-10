@@ -313,3 +313,9 @@
     background:
         rgba(0, 200, 255, 0.40);
 }
+
+/* SIDEBAR LOAD TEST */
+
+[class*="sidebar"] {
+    outline: 3px solid red !important;
+}

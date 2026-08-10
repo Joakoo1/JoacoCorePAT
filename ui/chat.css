@@ -58,3 +58,255 @@
     visibility: visible !important;
     opacity: 1 !important;
 }
+/* =========================================================
+   JOACO//CORE — MEMBER LIST HUD
+   ========================================================= */
+
+
+/* =========================================================
+   01 — MEMBER ROW
+   ========================================================= */
+
+[class*="membersGroup"] {
+    color: rgba(0, 220, 255, 0.75) !important;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.08em;
+
+    font-size: 10px !important;
+}
+
+
+/* Cada usuario */
+
+[class*="member"] {
+    position: relative !important;
+
+    border-radius: 10px !important;
+
+    margin: 2px 6px !important;
+
+    transition:
+        background 0.18s ease,
+        transform 0.18s ease,
+        box-shadow 0.18s ease !important;
+}
+
+
+/* =========================================================
+   02 — MEMBER HOVER
+   ========================================================= */
+
+[class*="member"]:hover {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 220, 255, 0.14),
+            rgba(0, 140, 255, 0.05),
+            transparent
+        ) !important;
+
+    transform:
+        translateX(3px) !important;
+
+    box-shadow:
+        inset 2px 0 0 rgba(0, 220, 255, 0.85),
+        0 0 12px rgba(0, 210, 255, 0.10) !important;
+}
+
+
+/* =========================================================
+   03 — MEMBER NAME
+   ========================================================= */
+
+[class*="member"] [class*="name"] {
+    transition:
+        color 0.18s ease,
+        text-shadow 0.18s ease !important;
+}
+
+
+[class*="member"]:hover [class*="name"] {
+    color:
+        rgba(0, 235, 255, 1) !important;
+
+    text-shadow:
+        0 0 7px rgba(0, 220, 255, 0.55) !important;
+}
+
+
+/* =========================================================
+   04 — AVATAR
+   ========================================================= */
+
+[class*="member"] [class*="avatar"] {
+    transition:
+        transform 0.18s ease,
+        filter 0.18s ease !important;
+}
+
+
+[class*="member"]:hover [class*="avatar"] {
+    transform:
+        scale(1.06) !important;
+
+    filter:
+        drop-shadow(
+            0 0 5px rgba(0, 220, 255, 0.45)
+        ) !important;
+}
+
+
+/* =========================================================
+   05 — STATUS RING
+   ========================================================= */
+
+/*
+   Convertimos el indicador de estado en un aro.
+*/
+
+[class*="member"] [class*="status"] {
+    border-radius:
+        50% !important;
+
+    width:
+        11px !important;
+
+    height:
+        11px !important;
+
+    background:
+        transparent !important;
+
+    border:
+        2px solid currentColor !important;
+
+    box-sizing:
+        border-box !important;
+
+    box-shadow:
+        0 0 5px currentColor !important;
+}
+
+
+/* =========================================================
+   06 — ONLINE → CYAN
+   ========================================================= */
+
+[class*="member"]
+[class*="status"][class*="online"] {
+
+    color:
+        #00eaff !important;
+
+    border-color:
+        #00eaff !important;
+
+    box-shadow:
+        0 0 5px #00eaff,
+        0 0 10px rgba(0, 234, 255, 0.45) !important;
+}
+
+
+/* =========================================================
+   07 — IDLE → YELLOW
+   ========================================================= */
+
+[class*="member"]
+[class*="status"][class*="idle"] {
+
+    color:
+        #ffd84a !important;
+
+    border-color:
+        #ffd84a !important;
+
+    box-shadow:
+        0 0 5px #ffd84a,
+        0 0 10px rgba(255, 216, 74, 0.40) !important;
+}
+
+
+/* =========================================================
+   08 — DND → RED
+   ========================================================= */
+
+[class*="member"]
+[class*="status"][class*="dnd"] {
+
+    color:
+        #ff4268 !important;
+
+    border-color:
+        #ff4268 !important;
+
+    box-shadow:
+        0 0 5px #ff4268,
+        0 0 10px rgba(255, 66, 104, 0.40) !important;
+}
+
+
+/* =========================================================
+   09 — OFFLINE → DIM
+   ========================================================= */
+
+[class*="member"]
+[class*="status"][class*="offline"] {
+
+    color:
+        rgba(150, 160, 175, 0.55) !important;
+
+    border-color:
+        rgba(150, 160, 175, 0.55) !important;
+
+    box-shadow:
+        none !important;
+}
+
+
+/* =========================================================
+   10 — ONLINE PULSE
+   ========================================================= */
+
+[class*="member"]
+[class*="status"][class*="online"] {
+
+    animation:
+        joacoStatusPulse 2.2s ease-in-out infinite !important;
+}
+
+
+@keyframes joacoStatusPulse {
+
+    0%,
+    100% {
+        filter:
+            brightness(1);
+    }
+
+    50% {
+        filter:
+            brightness(1.35);
+    }
+}
+
+
+/* =========================================================
+   11 — ACTIVE MEMBER
+   ========================================================= */
+
+[class*="member"][aria-selected="true"] {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 220, 255, 0.17),
+            rgba(0, 150, 255, 0.06),
+            transparent
+        ) !important;
+
+    box-shadow:
+        inset 2px 0 0 #00eaff,
+        0 0 12px rgba(0, 220, 255, 0.10) !important;
+}

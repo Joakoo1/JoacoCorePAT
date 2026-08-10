@@ -157,29 +157,43 @@
         ) !important;
 }
 
-
 /* =========================================================
-   JOACO//CORE — RADIAL STATUS
+   JOACO//CORE — RADIAL STATUS v2
    ========================================================= */
 
 
-/* Base del indicador */
+/* El wrapper permite que el aro sobresalga ligeramente */
+
+#app-mount .wrapper__44b0c {
+    overflow: visible !important;
+}
+
+#app-mount .wrapper__44b0c svg {
+    overflow: visible !important;
+}
+
+
+/* =========================================================
+   STATUS RING
+   ========================================================= */
 
 #app-mount .wrapper__44b0c rect.pointerEvents__44b0c {
-    x: 0 !important;
-    y: 0 !important;
+    x: 1.5 !important;
+    y: 1.5 !important;
 
-    width: 100% !important;
-    height: 100% !important;
+    width: 29px !important;
+    height: 29px !important;
 
     rx: 50% !important;
     ry: 50% !important;
 
     fill: transparent !important;
 
-    stroke-width: 3px !important;
+    stroke-width: 2px !important;
 
     pointer-events: none !important;
+
+    filter: none !important;
 
     transition:
         stroke 0.2s ease,
@@ -197,13 +211,12 @@
     stroke: #00eaff !important;
 
     filter:
-        drop-shadow(0 0 3px #00eaff)
-        drop-shadow(0 0 8px rgba(0, 234, 255, 0.55)) !important;
+        drop-shadow(0 0 3px rgba(0, 234, 255, 0.75)) !important;
 }
 
 
 /* =========================================================
-   IDLE — AMARILLO
+   IDLE — YELLOW
    ========================================================= */
 
 #app-mount .wrapper__44b0c rect.pointerEvents__44b0c[
@@ -212,13 +225,12 @@
     stroke: #ffd84a !important;
 
     filter:
-        drop-shadow(0 0 3px #ffd84a)
-        drop-shadow(0 0 8px rgba(255, 216, 74, 0.50)) !important;
+        drop-shadow(0 0 3px rgba(255, 216, 74, 0.7)) !important;
 }
 
 
 /* =========================================================
-   DND — ROJO
+   DND — RED
    ========================================================= */
 
 #app-mount .wrapper__44b0c rect.pointerEvents__44b0c[
@@ -227,13 +239,12 @@
     stroke: #ff4268 !important;
 
     filter:
-        drop-shadow(0 0 3px #ff4268)
-        drop-shadow(0 0 8px rgba(255, 66, 104, 0.50)) !important;
+        drop-shadow(0 0 3px rgba(255, 66, 104, 0.7)) !important;
 }
 
 
 /* =========================================================
-   STREAMING — MORADO
+   STREAMING — PURPLE
    ========================================================= */
 
 #app-mount .wrapper__44b0c rect.pointerEvents__44b0c[
@@ -242,13 +253,12 @@
     stroke: #b46cff !important;
 
     filter:
-        drop-shadow(0 0 3px #b46cff)
-        drop-shadow(0 0 8px rgba(180, 108, 255, 0.50)) !important;
+        drop-shadow(0 0 3px rgba(180, 108, 255, 0.7)) !important;
 }
 
 
 /* =========================================================
-   OFFLINE — GRIS
+   OFFLINE — GREY
    ========================================================= */
 
 #app-mount .wrapper__44b0c rect.pointerEvents__44b0c[
@@ -257,38 +267,35 @@
 #app-mount .wrapper__44b0c rect.pointerEvents__44b0c[
     mask*="status-invisible"
 ] {
-    stroke: rgba(150, 160, 175, 0.65) !important;
+    stroke: rgba(150, 160, 175, 0.55) !important;
 
-    filter:
-        drop-shadow(0 0 3px rgba(150, 160, 175, 0.25)) !important;
+    filter: none !important;
 }
 
 
 /* =========================================================
-   VOICE — CYAN
+   VOICE ACTIVITY
    ========================================================= */
 
 #app-mount .avatarSpeaking__44b0c {
     border-radius: 50% !important;
 
     box-shadow:
-        inset 0 0 0 3px #00eaff,
-        0 0 6px #00eaff,
-        0 0 14px rgba(0, 234, 255, 0.65) !important;
+        inset 0 0 0 2px #00eaff,
+        0 0 7px rgba(0, 234, 255, 0.75) !important;
 
     animation:
-        joacoVoicePulse 1s ease-in-out infinite !important;
+        joacoVoicePulse 1.2s ease-in-out infinite !important;
 }
 
 
 @keyframes joacoVoicePulse {
-
     0%,
     100% {
         filter: brightness(1);
     }
 
     50% {
-        filter: brightness(1.35);
+        filter: brightness(1.25);
     }
 }

@@ -310,3 +310,192 @@
         inset 2px 0 0 #00eaff,
         0 0 12px rgba(0, 220, 255, 0.10) !important;
 }
+/* =========================================================
+   JOACO//CORE — RADIAL STATUS
+   ========================================================= */
+
+#app-mount .wrapper__44b0c {
+    border-radius: 50% !important;
+}
+
+#app-mount .wrapper__44b0c svg:not(:root) {
+    overflow: visible !important;
+    contain: none !important;
+}
+
+
+/* =========================================================
+   STATUS RING BASE
+   ========================================================= */
+
+#app-mount .wrapper__44b0c rect {
+    fill: transparent !important;
+
+    x: 0 !important;
+    y: 0 !important;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    rx: 50% !important;
+    ry: 50% !important;
+
+    stroke-width: 2.5px !important;
+
+    display: block !important;
+
+    mask: none !important;
+
+    transition:
+        stroke 0.2s ease,
+        filter 0.2s ease !important;
+}
+
+
+/* =========================================================
+   ONLINE — CYAN
+   ========================================================= */
+
+#app-mount .wrapper__44b0c rect[
+    fill="#43b581"
+],
+#app-mount .wrapper__44b0c rect[
+    fill="#43a25a"
+],
+#app-mount .wrapper__44b0c rect[
+    fill="#3ba55c"
+],
+#app-mount .wrapper__44b0c rect[
+    fill="#23a55a"
+],
+#app-mount .wrapper__44b0c rect[
+    mask*="online"
+] {
+    stroke: #00eaff !important;
+
+    filter:
+        drop-shadow(0 0 3px #00eaff)
+        drop-shadow(0 0 7px rgba(0, 234, 255, 0.55)) !important;
+}
+
+
+/* =========================================================
+   IDLE — YELLOW
+   ========================================================= */
+
+#app-mount .wrapper__44b0c rect[
+    fill="#faa61a"
+],
+#app-mount .wrapper__44b0c rect[
+    fill="#ca9654"
+],
+#app-mount .wrapper__44b0c rect[
+    fill="#f0b232"
+],
+#app-mount .wrapper__44b0c rect[
+    mask*="idle"
+] {
+    stroke: #ffd84a !important;
+
+    filter:
+        drop-shadow(0 0 3px #ffd84a)
+        drop-shadow(0 0 7px rgba(255, 216, 74, 0.45)) !important;
+}
+
+
+/* =========================================================
+   DND — RED
+   ========================================================= */
+
+#app-mount .wrapper__44b0c rect[
+    fill="#f04747"
+],
+#app-mount .wrapper__44b0c rect[
+    fill="#d83a42"
+],
+#app-mount .wrapper__44b0c rect[
+    fill="#ed4245"
+],
+#app-mount .wrapper__44b0c rect[
+    fill="#f23f43"
+],
+#app-mount .wrapper__44b0c rect[
+    mask*="dnd"
+] {
+    stroke: #ff4268 !important;
+
+    filter:
+        drop-shadow(0 0 3px #ff4268)
+        drop-shadow(0 0 7px rgba(255, 66, 104, 0.45)) !important;
+}
+
+
+/* =========================================================
+   STREAMING — PURPLE
+   ========================================================= */
+
+#app-mount .wrapper__44b0c rect[
+    fill="#593695"
+],
+#app-mount .wrapper__44b0c rect[
+    mask*="streaming"
+] {
+    stroke: #b46cff !important;
+
+    filter:
+        drop-shadow(0 0 3px #b46cff)
+        drop-shadow(0 0 7px rgba(180, 108, 255, 0.45)) !important;
+}
+
+
+/* =========================================================
+   OFFLINE — GREY
+   ========================================================= */
+
+#app-mount .wrapper__44b0c rect[
+    fill="#747f8d"
+],
+#app-mount .wrapper__44b0c rect[
+    fill="#80848e"
+],
+#app-mount .wrapper__44b0c rect[
+    fill="#82858f"
+],
+#app-mount .wrapper__44b0c rect[
+    mask*="offline"
+] {
+    stroke: rgba(150, 160, 175, 0.65) !important;
+
+    filter:
+        drop-shadow(0 0 2px rgba(150, 160, 175, 0.25)) !important;
+}
+
+
+/* =========================================================
+   VOICE ACTIVITY — CYAN PULSE
+   ========================================================= */
+
+#app-mount .avatarSpeaking__44b0c {
+    border-radius: 50% !important;
+
+    box-shadow:
+        inset 0 0 0 2px #00eaff,
+        0 0 6px #00eaff,
+        0 0 14px rgba(0, 234, 255, 0.65) !important;
+
+    animation:
+        joacoVoicePulse 1s ease-in-out infinite !important;
+}
+
+
+@keyframes joacoVoicePulse {
+
+    0%,
+    100% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.35);
+    }
+}

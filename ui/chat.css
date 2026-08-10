@@ -220,7 +220,16 @@
         filter: brightness(1.25);
     }
 }
-/* TEST */
-#app-mount .scroller__36d07 {
-    background: red !important;
+/* =========================================================
+   JOACO//CORE — CHAT WALLPAPER
+   ========================================================= */
+
+#app-mount .container_c8ffbb {
+    background: transparent !important;
+    background-image: url("https://i.pinimg.com/736x/57/84/cd/5784cd2ebafc0b681f142b2fee7df431.jpg") !important;
+
+    background-size: 100% auto !important;
+    background-repeat: no-repeat !important;
+    background-position: center top !important;
+    background-attachment: scroll !important;
 }

@@ -292,3 +292,18 @@
             0 0 18px var(--jc-glow);
     }
 }
+
+/* ---------------------------------------------------------
+   JOACO//CORE — HOME ICON CENTER FIX
+   --------------------------------------------------------- */
+
+[class*="guilds"] [class*="listItem"]:first-child {
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+[class*="guilds"] [class*="listItem"]:first-child [class*="wrapper"] {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}

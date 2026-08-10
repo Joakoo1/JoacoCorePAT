@@ -2,6 +2,11 @@
    JOACO//CORE — FRIENDS
    ========================================================= */
 
+
+/* ---------------------------------------------------------
+   FRIENDS PANEL
+   --------------------------------------------------------- */
+
 [class*="people"] {
     background: rgba(5, 12, 22, 0.92) !important;
 
@@ -9,4 +14,38 @@
 
     box-shadow:
         inset 4px 0 20px rgba(0, 100, 200, 0.05) !important;
+}
+
+
+/* ---------------------------------------------------------
+   FRIENDS NAVIGATION
+   --------------------------------------------------------- */
+
+[role="tab"] {
+    border-radius: 7px !important;
+
+    transition:
+        background 0.15s ease,
+        color 0.15s ease,
+        box-shadow 0.15s ease !important;
+}
+
+
+/* TAB HOVER */
+
+[role="tab"]:hover {
+    background:
+        rgba(0, 168, 255, 0.08) !important;
+}
+
+
+/* SELECTED TAB */
+
+[role="tab"][aria-selected="true"] {
+    background:
+        rgba(0, 168, 255, 0.14) !important;
+
+    box-shadow:
+        inset 0 -2px 0 var(--jc-cyan),
+        0 0 10px rgba(0, 168, 255, 0.08) !important;
 }

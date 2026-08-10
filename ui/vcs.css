@@ -1,1 +1,33 @@
+/* =========================================================
+   JOACO//CORE — VOICE CONTROLS
+   ========================================================= */
 
+
+/* VOICE CONTROL BUTTONS */
+
+[class*="panels"] > div > div:first-child > :nth-child(2) > * {
+    border-radius: 8px !important;
+
+    transition:
+        background 0.15s ease,
+        color 0.15s ease,
+        box-shadow 0.15s ease,
+        transform 0.15s ease !important;
+}
+
+
+/* VOICE CONTROL HOVER */
+
+[class*="panels"] > div > div:first-child > :nth-child(2) > *:hover {
+    background:
+        rgba(0, 168, 255, 0.12) !important;
+
+    color:
+        var(--jc-cyan) !important;
+
+    box-shadow:
+        0 0 10px rgba(0, 168, 255, 0.18) !important;
+
+    transform:
+        translateY(-1px);
+}

@@ -419,3 +419,27 @@
 [class*="chat"] [class*="message"]::after {
     box-shadow: none !important;
 }
+
+/* =========================================================
+   ATTACHMENTS — INTEGRAR CON LA BURBUJA
+   ========================================================= */
+
+div[class*="clickableWrapper_af017a"] {
+    border-radius: 18px !important;
+    overflow: hidden !important;
+
+    border:
+        1px solid rgba(0, 220, 255, 0.78) !important;
+
+    box-shadow:
+        0 0 8px rgba(0, 210, 255, 0.22),
+        inset 0 0 14px rgba(0, 210, 255, 0.08) !important;
+
+    background:
+        rgba(8, 35, 70, 0.82) !important;
+}
+
+div[class*="imageWrapper_af017a"] {
+    border-radius: 15px !important;
+    overflow: hidden !important;
+}

@@ -41,6 +41,30 @@
 
 
 /* =========================================================
+   CHAT WALLPAPER — REAL SCROLLER
+   ========================================================= */
+
+[class*="chatContent"] [class*="scroller"] {
+    background-color: #080b10 !important;
+
+    background-image:
+        linear-gradient(
+            rgba(5, 8, 14, 0.25),
+            rgba(5, 8, 14, 0.25)
+        ),
+        url("https://i.pinimg.com/736x/ba/6c/bd/ba6cbd60045586c8f01d581ba2d902b8.jpg") !important;
+
+    background-position: center center !important;
+
+    background-size: cover !important;
+
+    background-repeat: no-repeat !important;
+
+    background-attachment: fixed !important;
+}
+
+
+/* =========================================================
    02 — MESSAGE BUBBLES
    ========================================================= */
 

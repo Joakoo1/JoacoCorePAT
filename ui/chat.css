@@ -1,5 +1,7 @@
-/* JOACOCORE CHAT TEST */
-
 body {
-    filter: hue-rotate(90deg) !important;
+    filter: none !important;
+}
+
+[class*="chat"] {
+    outline: 5px solid red !important;
 }

@@ -1,74 +1,118 @@
 /* =========================================================
-   JOACO//CORE — CHAT
+   JOACO//CORE — DISCORD CHAT
+   MESSAGE BUBBLES + AVATAR STICKERS + BACKGROUND
    ========================================================= */
 
 
-/* ---------------------------------------------------------
-   CHAT BACKGROUND
-   --------------------------------------------------------- */
+/* =========================================================
+   BACKGROUND
+   ========================================================= */
 
 [class*="chat"] {
     background:
         linear-gradient(
-            rgba(13, 13, 15, 0.68),
-            rgba(13, 13, 15, 0.68)
+            rgba(13, 13, 15, 0.58),
+            rgba(13, 13, 15, 0.58)
         ),
         url("https://i.pinimg.com/736x/ba/6c/bd/ba6cbd60045586c8f01d581ba2d902b8.jpg")
-        center / contain no-repeat fixed !important;
+        center / cover no-repeat fixed !important;
 
-    background-color: #0d0d0f !important;
+    background-color:
+        #0d0d0f !important;
 }
 
 
-/* ---------------------------------------------------------
-   MESSAGE COMPOSER
-   --------------------------------------------------------- */
+/* =========================================================
+   MESSAGE BUBBLES
+   ========================================================= */
 
-[class*="chat"] [class*="textArea"] {
-    border-radius: 10px !important;
-}
+/*
+   [class*="contents"] fue el selector que encontramos
+   que funciona correctamente en TODOS los mensajes.
+*/
 
+[class*="chat"] [class*="message"] [class*="contents"] {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(20, 55, 95, 0.82),
+            rgba(8, 35, 70, 0.76)
+        ) !important;
 
-/* ---------------------------------------------------------
-   COMPOSER TOOLBAR
-   GIF / EMOJI / STICKERS / ACTIVITIES
-   --------------------------------------------------------- */
+    border:
+        1px solid rgba(0, 220, 255, 0.75) !important;
 
-[class*="chat"] [class*="textArea"] ~ * > * {
-    border-radius: 7px !important;
+    border-radius:
+        18px !important;
+
+    padding:
+        7px 13px !important;
+
+    margin-left:
+        2px !important;
+
+    box-shadow:
+        0 0 8px rgba(0, 210, 255, 0.22),
+        0 0 18px rgba(0, 140, 255, 0.10),
+        inset 0 0 14px rgba(0, 210, 255, 0.08) !important;
 
     transition:
         background 0.15s ease,
-        color 0.15s ease,
-        box-shadow 0.15s ease,
-        transform 0.15s ease !important;
+        border-color 0.15s ease,
+        box-shadow 0.15s ease !important;
 }
 
 
-/* TOOLBAR HOVER */
+/* =========================================================
+   MESSAGE BUBBLE — HOVER
+   ========================================================= */
 
-[class*="chat"] [class*="textArea"] ~ * > *:hover {
-    background: rgba(0, 168, 255, 0.12) !important;
+[class*="chat"] [class*="message"] [class*="contents"]:hover {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(25, 70, 120, 0.88),
+            rgba(8, 45, 85, 0.82)
+        ) !important;
 
-    color: var(--jc-cyan) !important;
+    border-color:
+        rgba(0, 235, 255, 0.95) !important;
 
     box-shadow:
-        0 0 9px rgba(0, 168, 255, 0.18) !important;
-
-    transform: scale(1.08);
+        0 0 10px rgba(0, 220, 255, 0.32),
+        0 0 22px rgba(0, 140, 255, 0.16),
+        inset 0 0 16px rgba(0, 220, 255, 0.10) !important;
 }
 
 
-/* ---------------------------------------------------------
-   GIF / STICKER / EMOJI PICKER
-   --------------------------------------------------------- */
+/* =========================================================
+   AVATAR — STICKER STYLE
+   ========================================================= */
 
-[role="dialog"] > * {
-    border-radius: 12px !important;
+[class*="chat"] [class*="message"] [class*="avatar"] {
+    position:
+        relative !important;
+
+    z-index:
+        10 !important;
+
+    /*
+       Un poquito arriba y hacia la izquierda,
+       sobresaliendo de la burbuja.
+    */
+    transform:
+        translate(-10px, -10px) !important;
 
     border:
-        1px solid rgba(0, 168, 255, 0.25) !important;
+        2px solid rgba(0, 220, 255, 0.85) !important;
+
+    border-radius:
+        50% !important;
 
     box-shadow:
-        0 0 20px rgba(0, 168, 255, 0.12) !important;
+        0 0 8px rgba(0, 210, 255, 0.30),
+        0 0 16px rgba(0, 140, 255, 0.12) !important;
+
+    background:
+        #07131c !important;
 }

@@ -159,178 +159,13 @@
 
 
 /* =========================================================
-   05 — STATUS RING
-   ========================================================= */
-
-/*
-   Convertimos el indicador de estado en un aro.
-*/
-
-[class*="member"] [class*="status"] {
-    border-radius:
-        50% !important;
-
-    width:
-        11px !important;
-
-    height:
-        11px !important;
-
-    background:
-        transparent !important;
-
-    border:
-        2px solid currentColor !important;
-
-    box-sizing:
-        border-box !important;
-
-    box-shadow:
-        0 0 5px currentColor !important;
-}
-
-
-/* =========================================================
-   06 — ONLINE → CYAN
-   ========================================================= */
-
-[class*="member"]
-[class*="status"][class*="online"] {
-
-    color:
-        #00eaff !important;
-
-    border-color:
-        #00eaff !important;
-
-    box-shadow:
-        0 0 5px #00eaff,
-        0 0 10px rgba(0, 234, 255, 0.45) !important;
-}
-
-
-/* =========================================================
-   07 — IDLE → YELLOW
-   ========================================================= */
-
-[class*="member"]
-[class*="status"][class*="idle"] {
-
-    color:
-        #ffd84a !important;
-
-    border-color:
-        #ffd84a !important;
-
-    box-shadow:
-        0 0 5px #ffd84a,
-        0 0 10px rgba(255, 216, 74, 0.40) !important;
-}
-
-
-/* =========================================================
-   08 — DND → RED
-   ========================================================= */
-
-[class*="member"]
-[class*="status"][class*="dnd"] {
-
-    color:
-        #ff4268 !important;
-
-    border-color:
-        #ff4268 !important;
-
-    box-shadow:
-        0 0 5px #ff4268,
-        0 0 10px rgba(255, 66, 104, 0.40) !important;
-}
-
-
-/* =========================================================
-   09 — OFFLINE → DIM
-   ========================================================= */
-
-[class*="member"]
-[class*="status"][class*="offline"] {
-
-    color:
-        rgba(150, 160, 175, 0.55) !important;
-
-    border-color:
-        rgba(150, 160, 175, 0.55) !important;
-
-    box-shadow:
-        none !important;
-}
-
-
-/* =========================================================
-   10 — ONLINE PULSE
-   ========================================================= */
-
-[class*="member"]
-[class*="status"][class*="online"] {
-
-    animation:
-        joacoStatusPulse 2.2s ease-in-out infinite !important;
-}
-
-
-@keyframes joacoStatusPulse {
-
-    0%,
-    100% {
-        filter:
-            brightness(1);
-    }
-
-    50% {
-        filter:
-            brightness(1.35);
-    }
-}
-
-
-/* =========================================================
-   11 — ACTIVE MEMBER
-   ========================================================= */
-
-[class*="member"][aria-selected="true"] {
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0, 220, 255, 0.17),
-            rgba(0, 150, 255, 0.06),
-            transparent
-        ) !important;
-
-    box-shadow:
-        inset 2px 0 0 #00eaff,
-        0 0 12px rgba(0, 220, 255, 0.10) !important;
-}
-/* =========================================================
    JOACO//CORE — RADIAL STATUS
    ========================================================= */
 
-#app-mount .wrapper__44b0c {
-    border-radius: 50% !important;
-}
 
-#app-mount .wrapper__44b0c svg:not(:root) {
-    overflow: visible !important;
-    contain: none !important;
-}
+/* Base del indicador */
 
-
-/* =========================================================
-   STATUS RING BASE
-   ========================================================= */
-
-#app-mount .wrapper__44b0c rect {
-    fill: transparent !important;
-
+#app-mount .wrapper__44b0c rect.pointerEvents__44b0c {
     x: 0 !important;
     y: 0 !important;
 
@@ -340,11 +175,11 @@
     rx: 50% !important;
     ry: 50% !important;
 
-    stroke-width: 2.5px !important;
+    fill: transparent !important;
 
-    display: block !important;
+    stroke-width: 3px !important;
 
-    mask: none !important;
+    pointer-events: none !important;
 
     transition:
         stroke 0.2s ease,
@@ -356,130 +191,88 @@
    ONLINE — CYAN
    ========================================================= */
 
-#app-mount .wrapper__44b0c rect[
-    fill="#43b581"
-],
-#app-mount .wrapper__44b0c rect[
-    fill="#43a25a"
-],
-#app-mount .wrapper__44b0c rect[
-    fill="#3ba55c"
-],
-#app-mount .wrapper__44b0c rect[
-    fill="#23a55a"
-],
-#app-mount .wrapper__44b0c rect[
-    mask*="online"
+#app-mount .wrapper__44b0c rect.pointerEvents__44b0c[
+    mask*="status-online"
 ] {
     stroke: #00eaff !important;
 
     filter:
         drop-shadow(0 0 3px #00eaff)
-        drop-shadow(0 0 7px rgba(0, 234, 255, 0.55)) !important;
+        drop-shadow(0 0 8px rgba(0, 234, 255, 0.55)) !important;
 }
 
 
 /* =========================================================
-   IDLE — YELLOW
+   IDLE — AMARILLO
    ========================================================= */
 
-#app-mount .wrapper__44b0c rect[
-    fill="#faa61a"
-],
-#app-mount .wrapper__44b0c rect[
-    fill="#ca9654"
-],
-#app-mount .wrapper__44b0c rect[
-    fill="#f0b232"
-],
-#app-mount .wrapper__44b0c rect[
-    mask*="idle"
+#app-mount .wrapper__44b0c rect.pointerEvents__44b0c[
+    mask*="status-idle"
 ] {
     stroke: #ffd84a !important;
 
     filter:
         drop-shadow(0 0 3px #ffd84a)
-        drop-shadow(0 0 7px rgba(255, 216, 74, 0.45)) !important;
+        drop-shadow(0 0 8px rgba(255, 216, 74, 0.50)) !important;
 }
 
 
 /* =========================================================
-   DND — RED
+   DND — ROJO
    ========================================================= */
 
-#app-mount .wrapper__44b0c rect[
-    fill="#f04747"
-],
-#app-mount .wrapper__44b0c rect[
-    fill="#d83a42"
-],
-#app-mount .wrapper__44b0c rect[
-    fill="#ed4245"
-],
-#app-mount .wrapper__44b0c rect[
-    fill="#f23f43"
-],
-#app-mount .wrapper__44b0c rect[
-    mask*="dnd"
+#app-mount .wrapper__44b0c rect.pointerEvents__44b0c[
+    mask*="status-dnd"
 ] {
     stroke: #ff4268 !important;
 
     filter:
         drop-shadow(0 0 3px #ff4268)
-        drop-shadow(0 0 7px rgba(255, 66, 104, 0.45)) !important;
+        drop-shadow(0 0 8px rgba(255, 66, 104, 0.50)) !important;
 }
 
 
 /* =========================================================
-   STREAMING — PURPLE
+   STREAMING — MORADO
    ========================================================= */
 
-#app-mount .wrapper__44b0c rect[
-    fill="#593695"
-],
-#app-mount .wrapper__44b0c rect[
-    mask*="streaming"
+#app-mount .wrapper__44b0c rect.pointerEvents__44b0c[
+    mask*="status-streaming"
 ] {
     stroke: #b46cff !important;
 
     filter:
         drop-shadow(0 0 3px #b46cff)
-        drop-shadow(0 0 7px rgba(180, 108, 255, 0.45)) !important;
+        drop-shadow(0 0 8px rgba(180, 108, 255, 0.50)) !important;
 }
 
 
 /* =========================================================
-   OFFLINE — GREY
+   OFFLINE — GRIS
    ========================================================= */
 
-#app-mount .wrapper__44b0c rect[
-    fill="#747f8d"
+#app-mount .wrapper__44b0c rect.pointerEvents__44b0c[
+    mask*="status-offline"
 ],
-#app-mount .wrapper__44b0c rect[
-    fill="#80848e"
-],
-#app-mount .wrapper__44b0c rect[
-    fill="#82858f"
-],
-#app-mount .wrapper__44b0c rect[
-    mask*="offline"
+#app-mount .wrapper__44b0c rect.pointerEvents__44b0c[
+    mask*="status-invisible"
 ] {
     stroke: rgba(150, 160, 175, 0.65) !important;
 
     filter:
-        drop-shadow(0 0 2px rgba(150, 160, 175, 0.25)) !important;
+        drop-shadow(0 0 3px rgba(150, 160, 175, 0.25)) !important;
 }
 
 
 /* =========================================================
-   VOICE ACTIVITY — CYAN PULSE
+   VOICE — CYAN
    ========================================================= */
 
 #app-mount .avatarSpeaking__44b0c {
     border-radius: 50% !important;
 
     box-shadow:
-        inset 0 0 0 2px #00eaff,
+        inset 0 0 0 3px #00eaff,
         0 0 6px #00eaff,
         0 0 14px rgba(0, 234, 255, 0.65) !important;
 

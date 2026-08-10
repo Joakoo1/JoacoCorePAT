@@ -1,0 +1,965 @@
+/*
+ * JOACO//CORE
+ * Vencord Theme
+ * v1.0
+ *
+ * Electric blue / glitchcore / low-resource
+ */
+
+:root {
+    /* =========================
+       JOACO//CORE COLOR SYSTEM
+       ========================= */
+
+    --jc-bg: #050A12;
+    --jc-bg-2: #08111D;
+    --jc-bg-3: #0B1725;
+
+    --jc-panel: #0B1B2B;
+    --jc-panel-2: #0E2235;
+
+    --jc-blue: #0878E8;
+    --jc-blue-bright: #00A8FF;
+    --jc-blue-dark: #064A91;
+
+    --jc-cyan: #73D7FF;
+
+    --jc-text: #D9F3FF;
+    --jc-text-muted: #7896AA;
+
+    --jc-border: rgba(8, 120, 232, .35);
+
+    --jc-glow:
+        0 0 8px rgba(8, 120, 232, .45);
+
+    --jc-glow-strong:
+        0 0 12px rgba(0, 168, 255, .55);
+}
+
+
+/* =========================================
+   BASE
+   ========================================= */
+
+body {
+    background: var(--jc-bg) !important;
+    color: var(--jc-text) !important;
+}
+
+
+/* =========================================
+   MAIN DISCORD BACKGROUND
+   ========================================= */
+
+[class*="appMount"] {
+    background:
+        radial-gradient(
+            circle at 70% 10%,
+            rgba(0, 120, 255, .08),
+            transparent 35%
+        ),
+        var(--jc-bg) !important;
+}
+
+
+/* =========================================
+   SERVER SIDEBAR
+   ========================================= */
+
+[class*="guilds"] {
+    background:
+        linear-gradient(
+            180deg,
+            #050B13,
+            #07111D
+        ) !important;
+
+    border-right:
+        1px solid var(--jc-border);
+}
+
+
+/* Server icons */
+
+[class*="guilds"] [class*="listItem"] {
+    transition:
+        transform .12s ease,
+        filter .12s ease;
+}
+
+
+/* Server hover */
+
+[class*="guilds"] [class*="listItem"]:hover {
+    filter:
+        drop-shadow(
+            0 0 7px
+            rgba(0, 168, 255, .7)
+        );
+}
+
+
+/* Selected server */
+
+[class*="guilds"] [class*="selected"] {
+    filter:
+        drop-shadow(
+            0 0 10px
+            rgba(8, 120, 232, .8)
+        );
+}
+
+
+/* =========================================
+   CHANNEL SIDEBAR
+   ========================================= */
+
+[class*="sidebar"] {
+    background:
+        linear-gradient(
+            180deg,
+            var(--jc-bg-2),
+            #050C15
+        ) !important;
+
+    border-right:
+        1px solid var(--jc-border);
+}
+
+
+/* Channel names */
+
+[class*="channelName"],
+[class*="name"] {
+    color: var(--jc-text-muted);
+}
+
+
+/* Channel hover */
+
+[class*="channel"]:hover {
+    background:
+        rgba(8, 120, 232, .10) !important;
+
+    color:
+        var(--jc-text) !important;
+}
+
+
+/* Selected channel */
+
+[class*="modeSelected"] {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8, 120, 232, .22),
+            rgba(8, 120, 232, .04)
+        ) !important;
+
+    border-left:
+        2px solid var(--jc-blue);
+}
+
+
+/* =========================================
+   CHAT
+   ========================================= */
+
+[class*="chatContent"] {
+    background:
+        var(--jc-bg) !important;
+}
+
+
+/* Message hover */
+
+[class*="message"]:hover {
+    background:
+        rgba(8, 120, 232, .045) !important;
+}
+
+
+/* Username */
+
+[class*="username"] {
+    color:
+        var(--jc-cyan) !important;
+
+    text-shadow:
+        0 0 5px rgba(0, 168, 255, .30);
+}
+
+
+/* Timestamp */
+
+[class*="timestamp"] {
+    color:
+        #52768E !important;
+}
+
+
+/* =========================================
+   MESSAGE BOX
+   ========================================= */
+
+[class*="channelTextArea"] {
+    background:
+        var(--jc-panel) !important;
+
+    border:
+        1px solid var(--jc-border) !important;
+
+    border-radius:
+        10px !important;
+
+    box-shadow:
+        inset 0 0 12px
+        rgba(0, 80, 160, .08);
+}
+
+
+[class*="channelTextArea"]:focus-within {
+    border-color:
+        rgba(0, 168, 255, .65) !important;
+
+    box-shadow:
+        var(--jc-glow);
+}
+
+
+/* =========================================
+   BUTTONS
+   ========================================= */
+
+button {
+    transition:
+        background .12s ease,
+        box-shadow .12s ease,
+        transform .12s ease;
+}
+
+
+button:hover {
+    box-shadow:
+        0 0 7px
+        rgba(0, 140, 255, .35);
+}
+
+
+/* =========================================
+   LINKS
+   ========================================= */
+
+a {
+    color:
+        var(--jc-cyan) !important;
+}
+
+
+a:hover {
+    text-shadow:
+        0 0 7px
+        rgba(0, 168, 255, .7);
+}
+
+
+/* =========================================
+   CODE BLOCKS
+   ========================================= */
+
+[class*="codeBlock"] {
+    background:
+        #03070C !important;
+
+    border:
+        1px solid
+        rgba(8, 120, 232, .4);
+
+    box-shadow:
+        inset 0 0 15px
+        rgba(0, 100, 255, .08);
+}
+
+
+/* =========================================
+   MEMBERS
+   ========================================= */
+
+[class*="membersWrap"] {
+    background:
+        #060D16 !important;
+}
+
+
+/* Member hover */
+
+[class*="member"]:hover {
+    background:
+        rgba(8, 120, 232, .10) !important;
+}
+
+
+/* =========================================
+   USER AREA
+   ========================================= */
+
+[class*="panels"] {
+    background:
+        #050C14 !important;
+
+    border-top:
+        1px solid var(--jc-border);
+}
+
+
+/* =========================================
+   PROFILE POPUPS
+   ========================================= */
+
+[class*="userProfileOuter"],
+[class*="userProfileInner"] {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(8, 40, 70, .96),
+            rgba(3, 10, 18, .98)
+        ) !important;
+
+    border:
+        1px solid
+        rgba(0, 168, 255, .45) !important;
+
+    box-shadow:
+        0 0 15px
+        rgba(0, 100, 255, .35) !important;
+}
+
+
+/* =========================================
+   INPUTS
+   ========================================= */
+
+input,
+textarea {
+    background:
+        #07121E !important;
+
+    color:
+        var(--jc-text) !important;
+
+    border:
+        1px solid
+        rgba(8, 120, 232, .25) !important;
+}
+
+
+input:focus,
+textarea:focus {
+    border-color:
+        var(--jc-blue-bright) !important;
+
+    box-shadow:
+        0 0 8px
+        rgba(0, 168, 255, .35);
+}
+
+
+/* =========================================
+   SCROLLBARS
+   ========================================= */
+
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+
+::-webkit-scrollbar-track {
+    background:
+        transparent;
+}
+
+
+::-webkit-scrollbar-thumb {
+    background:
+        #075FAF;
+
+    border-radius:
+        10px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+    background:
+        var(--jc-blue-bright);
+
+    box-shadow:
+        0 0 8px
+        rgba(0, 168, 255, .7);
+}
+
+
+/* =========================================
+   SELECTION
+   ========================================= */
+
+::selection {
+    background:
+        rgba(0, 168, 255, .35);
+
+    color:
+        #FFFFFF;
+}
+
+
+/* =========================================
+   SUBTLE GLITCH ACCENT
+   ========================================= */
+
+[class*="header"] {
+    border-bottom:
+        1px solid
+        rgba(8, 120, 232, .20);
+}
+
+
+/* =========================================
+   LOW RESOURCE MODE
+   ========================================= */
+
+/*
+ * No infinite animations.
+ * No canvas.
+ * No particle systems.
+ * No heavy blur.
+ *
+ * Only small transitions and static shadows.
+ */
+
+ /* =========================================
+   JOACO//CORE — CHAT BACKGROUND
+   ========================================= */
+
+[class*="chatContent"] {
+    background:
+        linear-gradient(
+            rgba(3, 12, 25, 0.50),
+            rgba(3, 10, 20, 0.70)
+        ),
+        url("https://i.pinimg.com/736x/db/02/bf/db02bfec8e1c356d6cb75e9eb3163637.jpg")
+        center bottom / cover
+        no-repeat
+        fixed !important;
+}
+
+/* Hacer transparente la zona donde se muestran los mensajes */
+
+[class*="chatContent"] [class*="scroller"] {
+    background: transparent !important;
+}
+
+
+/* Mensajes */
+
+[class*="chatContent"] [class*="message"] {
+    background: transparent !important;
+}
+
+
+/* Hover */
+
+[class*="chatContent"] [class*="message"]:hover {
+    background: rgba(8, 120, 232, 0.08) !important;
+}
+/* =========================================
+   JOACO//CORE — FLOATING CHAT
+   ========================================= */
+
+[class*="chatContent"] {
+    margin: 8px 6px 8px 4px !important;
+
+    border:
+        1px solid rgba(0, 168, 255, .30) !important;
+
+    border-radius: 14px !important;
+
+    box-shadow:
+        0 0 18px rgba(0, 100, 255, .12),
+        inset 0 1px 0 rgba(255,255,255,.04);
+
+    overflow: hidden;
+}
+[class*="title"] {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8,120,232,.13),
+            transparent 70%
+        ) !important;
+
+    border-bottom:
+        1px solid rgba(0,168,255,.25) !important;
+
+    box-shadow:
+        0 3px 15px rgba(0,100,255,.08);
+}
+
+[class*="message"] {
+    margin:
+        3px 10px !important;
+
+    padding:
+        5px 10px !important;
+
+    border-radius:
+        8px !important;
+
+    transition:
+        background .15s ease,
+        transform .15s ease;
+}
+[class*="message"]:hover {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8,120,232,.12),
+            transparent
+        ) !important;
+
+    transform:
+        translateX(2px);
+
+    box-shadow:
+        -2px 0 0 var(--jc-blue),
+        0 0 12px rgba(0,120,255,.08);
+}
+
+[class*="username"] {
+    color: #73D7FF !important;
+
+    font-weight: 650;
+
+    text-shadow:
+        0 0 6px rgba(0,168,255,.35);
+}
+
+
+[class*="guilds"] {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            #03070D,
+            #06111D
+        ) !important;
+
+    border-right:
+        1px solid rgba(0,168,255,.25);
+}
+
+[class*="guilds"] [class*="listItem"] {
+    border-radius: 12px !important;
+
+    transition:
+        transform .15s ease,
+        filter .15s ease;
+}
+
+[class*="guilds"] [class*="listItem"]:hover {
+    transform:
+        scale(1.07);
+
+    filter:
+        drop-shadow(
+            0 0 9px
+            rgba(0,168,255,.65)
+        );
+}
+
+[class*="chatContent"]::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,.018) 0px,
+            rgba(255,255,255,.018) 1px,
+            transparent 1px,
+            transparent 4px
+        );
+
+    mix-blend-mode:
+        overlay;
+
+    opacity:
+        .35;
+
+    z-index:
+        5;
+}
+
+/* =========================================
+   FIX — AVATARS / DM MESSAGE LAYOUT
+   ========================================= */
+
+[class*="message"] {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+
+
+/* Mantener el contenedor interno de Discord */
+
+[class*="message"] > [class*="contents"] {
+    padding-left: 16px !important;
+}
+
+
+/* Avatar */
+
+[class*="message"] [class*="avatar"] {
+    position: relative !important;
+
+    width: 40px !important;
+    height: 40px !important;
+
+    margin-left: 0 !important;
+
+    flex-shrink: 0 !important;
+
+    transform: none !important;
+}
+
+
+/* No aplicar transformaciones al contenido */
+
+[class*="message"] [class*="avatar"] img {
+    transform: none !important;
+}
+
+/* =========================================
+   FIX — REPLIES
+   ========================================= */
+
+[class*="repliedMessage"] {
+    display: flex !important;
+
+    align-items: center !important;
+
+    min-height: 20px !important;
+
+    margin-left: 0 !important;
+
+    padding-left: 0 !important;
+
+    opacity: 1 !important;
+
+    visibility: visible !important;
+}
+
+
+/* Línea que conecta con el mensaje original */
+
+[class*="repliedMessage"]::before {
+    opacity: 1 !important;
+}
+
+
+/* Avatar del mensaje respondido */
+
+[class*="repliedMessage"] [class*="avatar"] {
+    width: 16px !important;
+    height: 16px !important;
+
+    flex-shrink: 0 !important;
+
+    margin-right: 6px !important;
+}
+
+
+/* Texto del reply */
+
+[class*="repliedMessage"] [class*="username"] {
+    display: inline !important;
+
+    color: var(--jc-cyan) !important;
+}
+
+
+/* Contenido */
+
+[class*="repliedMessage"] [class*="repliedTextContent"] {
+    color: var(--jc-text-muted) !important;
+
+    opacity: 1 !important;
+}
+
+/* =========================================
+   JOACO//CORE — FRIENDS / NETWORK PANEL
+   ========================================= */
+
+/* Fondo principal de Friends */
+[class*="nowPlayingColumn"],
+[class*="peopleColumn"],
+[class*="peopleList"] {
+    background:
+        linear-gradient(
+            135deg,
+            rgba(5, 12, 22, .96),
+            rgba(7, 22, 38, .96)
+        ) !important;
+}
+
+
+/* Header de Friends */
+[class*="peopleColumn"] [class*="header"],
+[class*="peopleList"] [class*="header"] {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8,120,232,.14),
+            transparent 70%
+        ) !important;
+
+    border-bottom:
+        1px solid rgba(0,168,255,.28) !important;
+
+    box-shadow:
+        0 4px 18px rgba(0,100,255,.08);
+}
+
+
+/* Tarjetas de amigos */
+[class*="peopleListItem"] {
+    margin:
+        5px 10px !important;
+
+    padding:
+        10px 12px !important;
+
+    border:
+        1px solid transparent !important;
+
+    border-radius:
+        10px !important;
+
+    background:
+        rgba(7, 22, 36, .45) !important;
+
+    transition:
+        background .16s ease,
+        border-color .16s ease,
+        transform .16s ease,
+        box-shadow .16s ease;
+}
+
+
+/* Hover de amigo */
+[class*="peopleListItem"]:hover {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(8,120,232,.18),
+            rgba(8,120,232,.04)
+        ) !important;
+
+    border-color:
+        rgba(0,168,255,.35) !important;
+
+    transform:
+        translateX(3px);
+
+    box-shadow:
+        -2px 0 0 var(--jc-blue),
+        0 0 16px rgba(0,120,255,.12);
+}
+
+
+/* Avatares */
+[class*="peopleListItem"] [class*="avatar"] {
+    border-radius:
+        10px !important;
+
+    filter:
+        drop-shadow(
+            0 0 5px rgba(0,140,255,.35)
+        );
+
+    transition:
+        filter .16s ease,
+        transform .16s ease;
+}
+
+
+[class*="peopleListItem"]:hover [class*="avatar"] {
+    filter:
+        drop-shadow(
+            0 0 9px rgba(0,168,255,.75)
+        );
+
+    transform:
+        scale(1.04);
+}
+
+
+/* Nombre */
+[class*="peopleListItem"] [class*="username"] {
+    color:
+        var(--jc-text) !important;
+
+    font-weight:
+        650 !important;
+}
+
+
+/* Estado */
+[class*="peopleListItem"] [class*="subtext"] {
+    color:
+        var(--jc-text-muted) !important;
+}
+
+
+/* Botones de amigo */
+[class*="peopleListItem"] button {
+    border-radius:
+        8px !important;
+
+    background:
+        rgba(8,120,232,.10) !important;
+
+    border:
+        1px solid rgba(0,168,255,.20) !important;
+}
+
+
+[class*="peopleListItem"] button:hover {
+    background:
+        rgba(8,120,232,.25) !important;
+
+    box-shadow:
+        0 0 9px rgba(0,140,255,.35);
+}
+/* =========================================
+   JOACO//CORE — USER / VOICE HUD
+   ========================================= */
+
+/* Panel inferior */
+[class*="panels"] {
+    margin:
+        6px !important;
+
+    border:
+        1px solid rgba(0,168,255,.28) !important;
+
+    border-radius:
+        12px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(7,25,42,.92),
+            rgba(3,10,18,.96)
+        ) !important;
+
+    box-shadow:
+        0 0 15px rgba(0,100,255,.12),
+        inset 0 1px 0 rgba(255,255,255,.04);
+}
+
+
+/* =========================================
+   VOICE CONNECTION
+   ========================================= */
+
+[class*="connection"] {
+    background:
+        rgba(0,0,0,.16) !important;
+
+    border:
+        1px solid rgba(0,168,255,.18) !important;
+
+    border-radius:
+        8px !important;
+}
+
+
+/* Estado conectado */
+[class*="rtcConnectionStatus"] {
+    color:
+        #73D7FF !important;
+
+    text-shadow:
+        0 0 7px rgba(0,168,255,.6);
+}
+
+
+/* =========================================
+   USER PANEL
+   ========================================= */
+
+[class*="accountProfileCard"] {
+    background:
+        transparent !important;
+}
+
+
+/* Avatar */
+[class*="panels"] [class*="avatar"] {
+    border-radius:
+        9px !important;
+
+    filter:
+        drop-shadow(
+            0 0 6px rgba(0,140,255,.45)
+        );
+}
+
+
+/* =========================================
+   MUTE / DEAFEN / SETTINGS
+   ========================================= */
+
+[class*="panels"] button {
+    border-radius:
+        7px !important;
+
+    background:
+        transparent !important;
+
+    transition:
+        background .14s ease,
+        box-shadow .14s ease,
+        transform .14s ease;
+}
+
+
+[class*="panels"] button:hover {
+    background:
+        rgba(8,120,232,.16) !important;
+
+    box-shadow:
+        0 0 9px rgba(0,140,255,.35);
+
+    transform:
+        translateY(-1px);
+}
+
+
+/* =========================================
+   ACTIVE VOICE GLOW
+   ========================================= */
+
+[class*="rtcConnectionStatus"]:hover {
+    color:
+        #00A8FF !important;
+
+    text-shadow:
+        0 0 5px #0878E8,
+        0 0 12px rgba(0,168,255,.7);
+}

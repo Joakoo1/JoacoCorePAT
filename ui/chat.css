@@ -7,22 +7,14 @@
 /* =========================================================
    CHAT WALLPAPER
    ========================================================= */
-
 .scroller__36d07.customTheme_d125d2 {
     background-image:
         url("https://i.pinimg.com/736x/ba/6c/bd/ba6cbd60045586c8f01d581ba2d902b8.jpg") !important;
 
-    background-position:
-        center center !important;
-
-    background-size:
-        cover !important;
-
-    background-repeat:
-        no-repeat !important;
-
-    background-attachment:
-        scroll !important;
+    background-position: center 30% !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: scroll !important;
 }
 
 

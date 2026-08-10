@@ -8,7 +8,13 @@
    --------------------------------------------------------- */
 
 [class*="chat"] {
-    background: #0d0d0f !important;
+    background:
+        linear-gradient(
+            rgba(13, 13, 15, 0.72),
+            rgba(13, 13, 15, 0.72)
+        ),
+        url("https://i.pinimg.com/736x/ba/6c/bd/ba6cbd60045586c8f01d581ba2d902b8.jpg")
+        center / cover no-repeat fixed !important;
 }
 
 

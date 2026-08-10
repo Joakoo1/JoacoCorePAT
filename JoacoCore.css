@@ -944,3 +944,314 @@ textarea:focus {
         0 0 12px rgba(0,168,255,.7);
 }
 
+/* =========================================================
+   JOACO//CORE — SERVER DOCK
+   ========================================================= */
+
+:root {
+    --jc-server-blue: #0878E8;
+    --jc-server-cyan: #00A8FF;
+    --jc-server-glow: rgba(0, 168, 255, .55);
+}
+
+
+/* ---------------------------------------------------------
+   SERVER BAR
+   --------------------------------------------------------- */
+
+[class*="guilds"] {
+    width: 72px !important;
+    padding: 8px 0 !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(3, 9, 17, .96),
+            rgba(4, 15, 27, .94)
+        ) !important;
+
+    border-right:
+        1px solid rgba(0, 168, 255, .20) !important;
+
+    box-shadow:
+        5px 0 20px rgba(0, 70, 140, .08);
+
+    backdrop-filter:
+        blur(14px);
+}
+
+
+/* ---------------------------------------------------------
+   SERVER LIST
+   --------------------------------------------------------- */
+
+[class*="guilds"] [class*="scroller"] {
+    padding:
+        4px 0 !important;
+}
+
+
+/* ---------------------------------------------------------
+   SERVER ITEMS
+   --------------------------------------------------------- */
+
+[class*="guilds"] [class*="listItem"] {
+    margin:
+        5px 0 !important;
+
+    width:
+        72px !important;
+
+    transition:
+        transform .16s ease;
+}
+
+
+/* ---------------------------------------------------------
+   SERVER ICON CONTAINER
+   --------------------------------------------------------- */
+
+[class*="guilds"] [class*="wrapper"] {
+    border-radius:
+        12px !important;
+
+    transition:
+        border-radius .18s ease,
+        transform .16s ease,
+        box-shadow .16s ease,
+        background .16s ease;
+}
+
+
+/* ---------------------------------------------------------
+   SERVER HOVER
+   --------------------------------------------------------- */
+
+[class*="guilds"] [class*="listItem"]:hover [class*="wrapper"] {
+    border-radius:
+        9px !important;
+
+    transform:
+        scale(1.06);
+
+    box-shadow:
+        0 0 10px rgba(0, 168, 255, .35),
+        0 0 22px rgba(0, 120, 232, .12);
+}
+
+
+/* ---------------------------------------------------------
+   SERVER IMAGE
+   --------------------------------------------------------- */
+
+[class*="guilds"] [class*="listItem"] img {
+    border-radius:
+        10px !important;
+
+    transition:
+        filter .16s ease,
+        transform .16s ease;
+}
+
+
+[class*="guilds"] [class*="listItem"]:hover img {
+    filter:
+        saturate(1.25)
+        brightness(1.08)
+        drop-shadow(
+            0 0 5px rgba(0, 168, 255, .45)
+        );
+}
+
+
+/* ---------------------------------------------------------
+   ACTIVE SERVER
+   --------------------------------------------------------- */
+
+[class*="guilds"] [class*="listItem"]:has(
+    [class*="selected"]
+) [class*="wrapper"] {
+
+    border-radius:
+        9px !important;
+
+    box-shadow:
+        0 0 12px rgba(0, 168, 255, .32),
+        inset 0 0 12px rgba(0, 120, 232, .10);
+}
+
+
+/* ---------------------------------------------------------
+   ACTIVE SERVER — CYAN INDICATOR
+   --------------------------------------------------------- */
+
+[class*="guilds"] [class*="listItem"]:has(
+    [class*="selected"]
+)::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 4px;
+    top: 50%;
+
+    width: 3px;
+    height: 30px;
+
+    transform:
+        translateY(-50%);
+
+    border-radius:
+        4px;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--jc-server-cyan),
+            var(--jc-server-blue)
+        );
+
+    box-shadow:
+        0 0 6px var(--jc-server-cyan),
+        0 0 14px var(--jc-server-glow);
+
+    animation:
+        jc-server-pulse 2.5s ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   HOME BUTTON
+   --------------------------------------------------------- */
+
+[class*="guilds"] [class*="homeIcon"] {
+    filter:
+        drop-shadow(
+            0 0 4px rgba(0, 168, 255, .25)
+        );
+
+    transition:
+        filter .16s ease,
+        transform .16s ease;
+}
+
+
+[class*="guilds"] [class*="listItem"]:first-child:hover
+[class*="homeIcon"] {
+
+    transform:
+        scale(1.08);
+
+    filter:
+        drop-shadow(
+            0 0 7px rgba(0, 168, 255, .75)
+        );
+}
+
+
+/* ---------------------------------------------------------
+   SEPARATORS
+   --------------------------------------------------------- */
+
+[class*="guilds"] [class*="tutorialContainer"] {
+    margin-bottom:
+        8px !important;
+}
+
+
+/* ---------------------------------------------------------
+   ADD SERVER / DISCOVER
+   --------------------------------------------------------- */
+
+[class*="guilds"] [class*="circleIconButton"] {
+    border-radius:
+        10px !important;
+
+    background:
+        rgba(0, 120, 232, .07) !important;
+
+    border:
+        1px solid rgba(0, 168, 255, .16) !important;
+
+    color:
+        #73D7FF !important;
+
+    transition:
+        background .16s ease,
+        border-color .16s ease,
+        box-shadow .16s ease,
+        transform .16s ease;
+}
+
+
+[class*="guilds"] [class*="circleIconButton"]:hover {
+    background:
+        rgba(0, 120, 232, .20) !important;
+
+    border-color:
+        rgba(0, 168, 255, .45) !important;
+
+    color:
+        #00A8FF !important;
+
+    box-shadow:
+        0 0 10px rgba(0, 168, 255, .30);
+
+    transform:
+        scale(1.05);
+}
+
+
+/* ---------------------------------------------------------
+   SMALL GLITCH / SCANLINE DETAIL
+   --------------------------------------------------------- */
+
+[class*="guilds"]::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255,255,255,.012) 0px,
+            rgba(255,255,255,.012) 1px,
+            transparent 1px,
+            transparent 5px
+        );
+
+    opacity:
+        .35;
+
+    mix-blend-mode:
+        overlay;
+}
+
+
+/* ---------------------------------------------------------
+   ACTIVE SERVER ANIMATION
+   --------------------------------------------------------- */
+
+@keyframes jc-server-pulse {
+
+    0%,
+    100% {
+        opacity: .65;
+        box-shadow:
+            0 0 5px var(--jc-server-cyan),
+            0 0 10px rgba(0, 168, 255, .35);
+    }
+
+    50% {
+        opacity: 1;
+        box-shadow:
+            0 0 8px var(--jc-server-cyan),
+            0 0 18px rgba(0, 168, 255, .55);
+    }
+}
+

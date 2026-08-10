@@ -1,1 +1,315 @@
+/* =========================================================
+   JOACO//CORE — CHANNEL SIDEBAR
+   Futuristic / HUD / Electric Blue
+   ========================================================= */
 
+
+/* ---------------------------------------------------------
+   MAIN CHANNEL SIDEBAR
+   --------------------------------------------------------- */
+
+[class*="sidebar"] {
+    background:
+        linear-gradient(
+            180deg,
+            rgba(5, 12, 22, 0.94),
+            rgba(4, 10, 18, 0.96)
+        ) !important;
+
+    border-right:
+        1px solid var(--jc-border) !important;
+
+    box-shadow:
+        4px 0 18px rgba(0, 80, 160, 0.08);
+
+    backdrop-filter:
+        blur(var(--jc-blur));
+
+    position: relative;
+}
+
+
+/* ---------------------------------------------------------
+   SUBTLE SIDEBAR SCANLINES
+   --------------------------------------------------------- */
+
+[class*="sidebar"]::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.012) 0px,
+            rgba(255, 255, 255, 0.012) 1px,
+            transparent 1px,
+            transparent 6px
+        );
+
+    opacity: 0.22;
+}
+
+
+/* ---------------------------------------------------------
+   SERVER HEADER
+   --------------------------------------------------------- */
+
+[class*="sidebar"] [class*="header"] {
+    background:
+        rgba(5, 14, 25, 0.72) !important;
+
+    border-bottom:
+        1px solid var(--jc-border) !important;
+
+    box-shadow:
+        0 3px 12px rgba(0, 80, 160, 0.06);
+
+    transition:
+        background var(--jc-normal),
+        border-color var(--jc-normal);
+}
+
+
+[class*="sidebar"] [class*="header"]:hover {
+    background:
+        rgba(8, 22, 38, 0.88) !important;
+
+    border-bottom-color:
+        var(--jc-border-hover) !important;
+}
+
+
+/* ---------------------------------------------------------
+   CHANNEL SCROLLER
+   --------------------------------------------------------- */
+
+[class*="sidebar"] [class*="scroller"] {
+    padding:
+        8px 6px 12px !important;
+}
+
+
+/* ---------------------------------------------------------
+   CATEGORY HEADERS
+   --------------------------------------------------------- */
+
+[class*="sidebar"] [class*="containerDefault"] {
+    margin-top:
+        4px;
+}
+
+
+[class*="sidebar"] [class*="mainContent"] {
+    border-radius:
+        var(--jc-radius-small);
+
+    transition:
+        background var(--jc-fast),
+        color var(--jc-fast);
+}
+
+
+[class*="sidebar"] [class*="mainContent"]:hover {
+    background:
+        rgba(0, 168, 255, 0.055);
+}
+
+
+/* ---------------------------------------------------------
+   CATEGORY TEXT
+   --------------------------------------------------------- */
+
+[class*="sidebar"] [class*="name"] {
+    transition:
+        color var(--jc-fast),
+        text-shadow var(--jc-fast);
+}
+
+
+[class*="sidebar"] [class*="containerDefault"]:hover
+[class*="name"] {
+    color:
+        var(--jc-blue-light);
+}
+
+
+/* ---------------------------------------------------------
+   CHANNEL ROWS
+   --------------------------------------------------------- */
+
+[class*="sidebar"] [class*="containerDefault"] > [class*="wrapper"] {
+    margin:
+        2px 0;
+
+    border-radius:
+        var(--jc-radius-small);
+
+    transition:
+        background var(--jc-fast),
+        transform var(--jc-fast),
+        box-shadow var(--jc-fast);
+}
+
+
+/* ---------------------------------------------------------
+   CHANNEL HOVER
+   --------------------------------------------------------- */
+
+[class*="sidebar"] [class*="containerDefault"] > [class*="wrapper"]:hover {
+
+    background:
+        rgba(0, 168, 255, 0.075) !important;
+
+    box-shadow:
+        inset 2px 0 0 rgba(0, 168, 255, 0.35),
+        0 0 10px rgba(0, 120, 232, 0.05);
+
+    transform:
+        translateX(2px);
+}
+
+
+/* ---------------------------------------------------------
+   CHANNEL ICONS
+   --------------------------------------------------------- */
+
+[class*="sidebar"] [class*="icon"] {
+    transition:
+        color var(--jc-fast),
+        filter var(--jc-fast);
+}
+
+
+[class*="sidebar"] [class*="containerDefault"] > [class*="wrapper"]:hover
+[class*="icon"] {
+
+    color:
+        var(--jc-blue-light);
+
+    filter:
+        drop-shadow(
+            0 0 4px var(--jc-glow)
+        );
+}
+
+
+/* ---------------------------------------------------------
+   SELECTED CHANNEL
+   --------------------------------------------------------- */
+
+[class*="sidebar"] [class*="modeSelected"] > [class*="wrapper"] {
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0, 168, 255, 0.16),
+            rgba(0, 120, 232, 0.055)
+        ) !important;
+
+    box-shadow:
+        inset 3px 0 0 var(--jc-cyan),
+        0 0 12px rgba(0, 168, 255, 0.08);
+
+    border-radius:
+        var(--jc-radius-small);
+}
+
+
+/* ---------------------------------------------------------
+   SELECTED CHANNEL ICON
+   --------------------------------------------------------- */
+
+[class*="sidebar"] [class*="modeSelected"]
+[class*="icon"] {
+
+    color:
+        var(--jc-cyan) !important;
+
+    filter:
+        drop-shadow(
+            0 0 5px var(--jc-glow)
+        );
+}
+
+
+/* ---------------------------------------------------------
+   SELECTED CHANNEL TEXT
+   --------------------------------------------------------- */
+
+[class*="sidebar"] [class*="modeSelected"]
+[class*="name"] {
+
+    color:
+        var(--jc-text) !important;
+
+    text-shadow:
+        0 0 7px rgba(0, 168, 255, 0.20);
+}
+
+
+/* ---------------------------------------------------------
+   VOICE CHANNELS
+   --------------------------------------------------------- */
+
+[class*="sidebar"] [class*="voiceChannelsButton"] {
+    transition:
+        background var(--jc-fast),
+        color var(--jc-fast);
+}
+
+
+[class*="sidebar"] [class*="voiceChannelsButton"]:hover {
+    background:
+        rgba(0, 168, 255, 0.07) !important;
+
+    color:
+        var(--jc-blue-light);
+}
+
+
+/* ---------------------------------------------------------
+   CONNECTED VOICE CHANNEL
+   --------------------------------------------------------- */
+
+[class*="sidebar"] [class*="voiceUser"] {
+    border-radius:
+        var(--jc-radius-small);
+
+    transition:
+        background var(--jc-fast);
+}
+
+
+[class*="sidebar"] [class*="voiceUser"]:hover {
+    background:
+        rgba(0, 168, 255, 0.06);
+}
+
+
+/* ---------------------------------------------------------
+   SIDEBAR SCROLLBAR
+   --------------------------------------------------------- */
+
+[class*="sidebar"] ::-webkit-scrollbar {
+    width:
+        5px;
+}
+
+
+[class*="sidebar"] ::-webkit-scrollbar-thumb {
+    background:
+        rgba(0, 168, 255, 0.18);
+
+    border-radius:
+        10px;
+}
+
+
+[class*="sidebar"] ::-webkit-scrollbar-thumb:hover {
+    background:
+        rgba(0, 200, 255, 0.40);
+}

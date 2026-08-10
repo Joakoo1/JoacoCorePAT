@@ -1,0 +1,19 @@
+/**
+ * @name JoacoCore
+ * @author Joakoo1
+ * @version 2.0.0
+ * @description PAT's custom Discord interface
+ */
+
+@import url("https://raw.githubusercontent.com/Joakoo1/JoacoCorePAT/main/core/variables.css");
+@import url("https://raw.githubusercontent.com/Joakoo1/JoacoCorePAT/main/core/base.css");
+@import url("https://raw.githubusercontent.com/Joakoo1/JoacoCorePAT/main/core/layout.css");
+@import url("https://raw.githubusercontent.com/Joakoo1/JoacoCorePAT/main/core/effects.css");
+
+@import url("https://raw.githubusercontent.com/Joakoo1/JoacoCorePAT/main/ui/serverbar.css");
+@import url("https://raw.githubusercontent.com/Joakoo1/JoacoCorePAT/main/ui/sidebar.css");
+@import url("https://raw.githubusercontent.com/Joakoo1/JoacoCorePAT/main/ui/chat.css");
+@import url("https://raw.githubusercontent.com/Joakoo1/JoacoCorePAT/main/ui/friends.css");
+@import url("https://raw.githubusercontent.com/Joakoo1/JoacoCorePAT/main/ui/userpanel.css");
+@import url("https://raw.githubusercontent.com/Joakoo1/JoacoCorePAT/main/ui/profile.css");
+@import url("https://raw.githubusercontent.com/Joakoo1/JoacoCorePAT/main/ui/vcs.css");

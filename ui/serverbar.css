@@ -1,1 +1,294 @@
+/* =========================================================
+   JOACO//CORE — SERVERBAR
+   Futuristic / Glitchcore / Electric Blue
+   ========================================================= */
 
+
+/* ---------------------------------------------------------
+   SERVER BAR — MAIN CONTAINER
+   --------------------------------------------------------- */
+
+[class*="guilds"] {
+    width: 74px !important;
+    min-width: 74px !important;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(3, 8, 16, 0.96),
+            rgba(4, 13, 24, 0.94)
+        ) !important;
+
+    border-right:
+        1px solid var(--jc-border) !important;
+
+    box-shadow:
+        4px 0 20px rgba(0, 80, 160, 0.10);
+
+    backdrop-filter:
+        blur(var(--jc-blur));
+
+    position: relative;
+}
+
+
+/* ---------------------------------------------------------
+   SUBTLE SCANLINES
+   --------------------------------------------------------- */
+
+[class*="guilds"]::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            rgba(255, 255, 255, 0.018) 0px,
+            rgba(255, 255, 255, 0.018) 1px,
+            transparent 1px,
+            transparent 5px
+        );
+
+    opacity: 0.3;
+}
+
+
+/* ---------------------------------------------------------
+   SERVER SCROLLER
+   --------------------------------------------------------- */
+
+[class*="guilds"] [class*="scroller"] {
+    padding:
+        6px 0 10px !important;
+}
+
+
+/* ---------------------------------------------------------
+   SERVER ITEMS
+   --------------------------------------------------------- */
+
+[class*="guilds"] [class*="listItem"] {
+    width: 74px !important;
+
+    margin:
+        5px 0 !important;
+
+    position: relative;
+}
+
+
+/* ---------------------------------------------------------
+   SERVER ICON WRAPPER
+   --------------------------------------------------------- */
+
+[class*="guilds"] [class*="listItem"] [class*="wrapper"] {
+    border-radius:
+        11px !important;
+
+    transition:
+        transform var(--jc-fast),
+        border-radius var(--jc-fast),
+        box-shadow var(--jc-fast),
+        background var(--jc-fast);
+}
+
+
+/* ---------------------------------------------------------
+   SERVER ICON
+   --------------------------------------------------------- */
+
+[class*="guilds"] [class*="listItem"] img {
+    border-radius:
+        10px !important;
+
+    transition:
+        filter var(--jc-fast),
+        transform var(--jc-fast);
+}
+
+
+/* ---------------------------------------------------------
+   HOVER
+   --------------------------------------------------------- */
+
+[class*="guilds"] [class*="listItem"]:hover
+[class*="wrapper"] {
+
+    transform:
+        scale(1.06);
+
+    border-radius:
+        8px !important;
+
+    box-shadow:
+        0 0 8px var(--jc-glow),
+        0 0 18px var(--jc-glow-soft);
+}
+
+
+[class*="guilds"] [class*="listItem"]:hover img {
+
+    filter:
+        saturate(1.25)
+        brightness(1.08)
+        drop-shadow(
+            0 0 5px var(--jc-glow)
+        );
+}
+
+
+/* ---------------------------------------------------------
+   ACTIVE SERVER
+   --------------------------------------------------------- */
+
+[class*="guilds"] [class*="listItem"]:has(
+    [class*="selected"]
+) [class*="wrapper"] {
+
+    border-radius:
+        8px !important;
+
+    box-shadow:
+        0 0 10px var(--jc-glow),
+        0 0 22px var(--jc-glow-soft),
+        inset 0 0 12px rgba(0, 168, 255, 0.10);
+}
+
+
+/* ---------------------------------------------------------
+   ACTIVE SERVER — CYAN INDICATOR
+   --------------------------------------------------------- */
+
+[class*="guilds"] [class*="listItem"]:has(
+    [class*="selected"]
+)::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 5px;
+    top: 50%;
+
+    width: 3px;
+    height: 32px;
+
+    transform:
+        translateY(-50%);
+
+    border-radius:
+        4px;
+
+    background:
+        linear-gradient(
+            180deg,
+            var(--jc-cyan),
+            var(--jc-blue)
+        );
+
+    box-shadow:
+        0 0 6px var(--jc-cyan),
+        0 0 14px var(--jc-glow);
+
+    animation:
+        jc-server-glow 2.5s ease-in-out infinite;
+}
+
+
+/* ---------------------------------------------------------
+   HOME / DISCORD BUTTON
+   --------------------------------------------------------- */
+
+[class*="guilds"] [class*="homeIcon"] {
+
+    transition:
+        transform var(--jc-fast),
+        filter var(--jc-fast);
+}
+
+
+[class*="guilds"] [class*="listItem"]:first-child:hover
+[class*="homeIcon"] {
+
+    transform:
+        scale(1.08);
+
+    filter:
+        drop-shadow(
+            0 0 6px var(--jc-glow-strong)
+        );
+}
+
+
+/* ---------------------------------------------------------
+   ADD SERVER / DISCOVER
+   --------------------------------------------------------- */
+
+[class*="guilds"] [class*="circleIconButton"] {
+
+    border-radius:
+        10px !important;
+
+    background:
+        rgba(0, 120, 232, 0.06) !important;
+
+    border:
+        1px solid var(--jc-border) !important;
+
+    color:
+        var(--jc-blue-light) !important;
+
+    transition:
+        transform var(--jc-fast),
+        background var(--jc-fast),
+        border-color var(--jc-fast),
+        box-shadow var(--jc-fast);
+}
+
+
+[class*="guilds"] [class*="circleIconButton"]:hover {
+
+    transform:
+        scale(1.06);
+
+    background:
+        rgba(0, 168, 255, 0.16) !important;
+
+    border-color:
+        var(--jc-border-hover) !important;
+
+    color:
+        var(--jc-cyan) !important;
+
+    box-shadow:
+        0 0 10px var(--jc-glow);
+}
+
+
+/* ---------------------------------------------------------
+   SERVER GLOW ANIMATION
+   --------------------------------------------------------- */
+
+@keyframes jc-server-glow {
+
+    0%,
+    100% {
+        opacity: 0.65;
+
+        box-shadow:
+            0 0 5px var(--jc-cyan),
+            0 0 10px var(--jc-glow-soft);
+    }
+
+    50% {
+        opacity: 1;
+
+        box-shadow:
+            0 0 8px var(--jc-cyan),
+            0 0 18px var(--jc-glow);
+    }
+}

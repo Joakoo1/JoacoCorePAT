@@ -158,144 +158,84 @@
 }
 
 /* =========================================================
-   JOACO//CORE — RADIAL STATUS v2
+   JOACO//CORE — RADIAL STATUS v3
    ========================================================= */
 
-
-/* El wrapper permite que el aro sobresalga ligeramente */
-
-#app-mount .wrapper__44b0c {
-    overflow: visible !important;
-}
-
-#app-mount .wrapper__44b0c svg {
-    overflow: visible !important;
-}
-
-
-/* =========================================================
-   STATUS RING
-   ========================================================= */
-
+/* El indicador original de Discord */
 #app-mount .wrapper__44b0c rect.pointerEvents__44b0c {
-    x: 1.5 !important;
-    y: 1.5 !important;
-
-    width: 29px !important;
-    height: 29px !important;
-
-    rx: 50% !important;
-    ry: 50% !important;
-
     fill: transparent !important;
+
+    /* SVG 40x40 */
+    x: 2 !important;
+    y: 2 !important;
+    width: 36 !important;
+    height: 36 !important;
+
+    rx: 18 !important;
+    ry: 18 !important;
 
     stroke-width: 2px !important;
 
     pointer-events: none !important;
 
     filter: none !important;
-
-    transition:
-        stroke 0.2s ease,
-        filter 0.2s ease !important;
 }
 
 
-/* =========================================================
-   ONLINE — CYAN
-   ========================================================= */
+/* =========================
+   ONLINE
+   ========================= */
 
-#app-mount .wrapper__44b0c rect.pointerEvents__44b0c[
-    mask*="status-online"
-] {
+#app-mount .wrapper__44b0c rect.pointerEvents__44b0c[mask*="status-online"] {
     stroke: #00eaff !important;
 
     filter:
-        drop-shadow(0 0 3px rgba(0, 234, 255, 0.75)) !important;
+        drop-shadow(0 0 3px rgba(0, 234, 255, .8)) !important;
 }
 
 
-/* =========================================================
-   IDLE — YELLOW
-   ========================================================= */
+/* =========================
+   IDLE
+   ========================= */
 
-#app-mount .wrapper__44b0c rect.pointerEvents__44b0c[
-    mask*="status-idle"
-] {
+#app-mount .wrapper__44b0c rect.pointerEvents__44b0c[mask*="status-idle"] {
     stroke: #ffd84a !important;
 
     filter:
-        drop-shadow(0 0 3px rgba(255, 216, 74, 0.7)) !important;
+        drop-shadow(0 0 3px rgba(255, 216, 74, .75)) !important;
 }
 
 
-/* =========================================================
-   DND — RED
-   ========================================================= */
+/* =========================
+   DND
+   ========================= */
 
-#app-mount .wrapper__44b0c rect.pointerEvents__44b0c[
-    mask*="status-dnd"
-] {
+#app-mount .wrapper__44b0c rect.pointerEvents__44b0c[mask*="status-dnd"] {
     stroke: #ff4268 !important;
 
     filter:
-        drop-shadow(0 0 3px rgba(255, 66, 104, 0.7)) !important;
+        drop-shadow(0 0 3px rgba(255, 66, 104, .75)) !important;
 }
 
 
-/* =========================================================
-   STREAMING — PURPLE
-   ========================================================= */
+/* =========================
+   STREAMING
+   ========================= */
 
-#app-mount .wrapper__44b0c rect.pointerEvents__44b0c[
-    mask*="status-streaming"
-] {
+#app-mount .wrapper__44b0c rect.pointerEvents__44b0c[mask*="status-streaming"] {
     stroke: #b46cff !important;
 
     filter:
-        drop-shadow(0 0 3px rgba(180, 108, 255, 0.7)) !important;
+        drop-shadow(0 0 3px rgba(180, 108, 255, .75)) !important;
 }
 
 
-/* =========================================================
-   OFFLINE — GREY
-   ========================================================= */
+/* =========================
+   OFFLINE
+   ========================= */
 
-#app-mount .wrapper__44b0c rect.pointerEvents__44b0c[
-    mask*="status-offline"
-],
-#app-mount .wrapper__44b0c rect.pointerEvents__44b0c[
-    mask*="status-invisible"
-] {
-    stroke: rgba(150, 160, 175, 0.55) !important;
-
+#app-mount .wrapper__44b0c rect.pointerEvents__44b0c[mask*="status-offline"],
+#app-mount .wrapper__44b0c rect.pointerEvents__44b0c[mask*="status-invisible"] {
+    stroke: rgba(150, 160, 175, .55) !important;
     filter: none !important;
-}
-
-
-/* =========================================================
-   VOICE ACTIVITY
-   ========================================================= */
-
-#app-mount .avatarSpeaking__44b0c {
-    border-radius: 50% !important;
-
-    box-shadow:
-        inset 0 0 0 2px #00eaff,
-        0 0 7px rgba(0, 234, 255, 0.75) !important;
-
-    animation:
-        joacoVoicePulse 1.2s ease-in-out infinite !important;
-}
-
-
-@keyframes joacoVoicePulse {
-    0%,
-    100% {
-        filter: brightness(1);
-    }
-
-    50% {
-        filter: brightness(1.25);
-    }
 }
